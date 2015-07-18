@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="ians-stylesheet.css">
+  <title>Ian's Notes</title>
+</head>
+
+<body>
+
+
+<div class="TOC">
+  <h1>Table of Contents</h1>
+  <div class="toc-contents">
+    <div class="flex-container">
+      <div class="flex-item">
+        <a href="#lesson-1"> Lesson One </a>
+        <ul>
+            <li><a href="#lesson1-1">World Wide Web</a></li>
+            <li><a href="#lesson1-2">HTML</a></li>
+            <li><a href="#lesson1-3">HTML Attributes</a></li>
+            <li><a href="#lesson1-4">White Space</a></li>
+            <li><a href="#lesson1-5">Inline vs. Block</a></li>
+        </ul>
+      </div>
+      <div class="flex-item">
+        <a href="#lesson-2"> Lesson Two </a>
+          <ul>
+            <li><a href="#lesson2-1">Developer Tools</a></li>
+            <li><a href="#lesson2-2">Structure of HTML</a></li>
+            <li><a href="#lesson2-3">Boxes and Indenetation</a></li>
+            <li><a href="#lesson2-4">Text Editors</a></li>
+          </ul>
+      </div>
+      <div class="flex-item">
+        <a href="#lesson-3"> Lesson Three </a>
+        <ul>
+          <li><a href="#lesson3-1">Avoiding Repetition</a></li>
+          <li><a href="#lesson3-2">CSS</a></li>
+        </ul>
+      </div>
+      <div class="flex-item">
+        <a href="#lesson-4"> Lesson Four </a>
+          <ul>
+            <li><a href="#lesson4-1">Computers vs Other Machines</a></li>
+            <li><a href="#lesson4-2">Computer Programs</a></li>
+            <li><a href="#lesson4-3">Programming Languages</a></li>
+            <li><a href="#lesson4-4">Python</a></li>
+            <li><a href="#lesson4-5">Grammar</a></li>
+            <li><a href="#lesson4-6">Python Expressions</a></li>
+      </div>
+      <div class="flex-item">
+        <a href="#lesson-5"> Lesson Five </a>
+        <ul>
+          <li><a href="#lesson5-1">Variables in Python</a></li>
+            <li><a href="#lesson5-2">Assigning Value to Variables</a></li>
+            <li><a href="#lesson5-3">The = in Math vs in Python</a></li>
+            <li><a href="#lesson5-4">How Variables are Useful</a></li>
+            <li><a href="#lesson5-5">Strings vs Numbers</a></li>
+        </ul>
+        </div>
+      </div>
+      <div class="flex-item">
+        <a href="#lesson-6"> Lesson Six </a>
+        <ul>
+          <li><a href="#lesson6-1">What a Function Is</a></li>
+            <li><a href="#lesson6-2">Making vs Using Functions</a></li>
+            <li><a href="#lesson6-3">The Importance of Return Statements</a></li>
+        </ul>
+        </div>
+  </div>
+</div>
+
+
+<div class="lesson">
+ <h1 id="lesson-1">Lesson 1: The Basics</h1>
+  <div class="concept" id="lesson1-1">
+    <div class="concept-title">
+      World Wide Web
+    </div>
+    <span class="concept-desc">
+      Created in 1990's it contains approximately 30 billion pages.
+    </span>
+    <p>
+      The World Wide Web is essentially a collection of HTML documents
+      which are connected to one another through hyperlinks.
+      The web functions basically with three main parts:<b><em> Browsers - The Internet - Servers</em></b>
+      <br>
+      Browsers are what people use to send requests to servers
+      via the internet, using a protocol called HTTP.
+    </p>
+  </div>
+  <div class="concept" id="lesson1-2">
+    <div class="concept-title">
+      HTML: Hyper Text Markup Language
+    </div>
+    <span class="concept-desc">HTML is made up of several parts</span>
+    <p>
+      <ol>
+        <li>Text content (plain content)</li> 
+        <li>Markup (used to change how content looks)</li>
+        <li>References to other documents (pictures, videos)</li>
+        <li>Links to other pages (hyper links)</li>
+      </ol>
+    <p>
+      <b>Text</b> is content in plain text.<br>
+      <b>Markup</b> is used to chage how the content looks.<br>
+      Markup is made of tags and they look like:
+      <br>
+      <b>&lt;tag></b><em> content </em><b>&lt;/tag></b>
+    </p>
+  </div>
+  <div class="concept" id="lesson1-3">
+    <div class="concept-title">
+      HTML Attributes
+    </div>
+    <p>
+      <span class="concept-desc">
+          HTML attributes are extra arguments within a tag that either alter the appearance or function of tags but in some cases are actually required.
+      </span>
+    </p>
+      <span class="example-attr">
+      &lt;tag <u>attribute</u>="value">
+      </span>
+        <div class="example-container">
+          <div class="tag-example">
+            <b>Anchor </b>
+            <br>
+            <span class="example">
+              &lt;a (used to create an anchor to another page?)
+              <br>
+               &lt;<b>a href</b>="www.udacity.com" > content &lt;/a>
+            </span>
+            <ul>
+              <li>a = the tag</li>
+              <li>href = the attribute</li>
+            </ul>
+          </div>
+          <div class="tag-example">
+            <b>Image</b>
+            <br>
+              <span class="example">
+               &lt;img> used to put images on a pages. Has multiple attributes.<br>
+               &lt;<b>img src</b>="url of image" <b>alt</b>="text to display when image is not found">
+              </span>
+            <ul>
+              <li>img = the tag</li>
+              <li>src = the attribute</li>
+              <li>alt = the attribute</li>
+            </ul>
+          </div>
+        </div>
+      <p style="clear: both;">
+        The image tag is also an example of a void tag, as it needs no cotent<br>
+        nor does it need a closing tag.<br>
+      </p>
+  </div>
+  <div class="concept" id="lesson1-4">
+    <div class="concept-title">
+      White Space
+    </div>
+    <p>
+      <span class="concept-desc">
+         All extra spaces and gaps become a single space in HTML.
+          Simply typing into multiple lines in HTML does not mean it will
+          show up in multiple lines on the page. You have to use markup such
+          as &lt;br> or &lt;p> to format the content to how you want it.  
+      </span>
+    </p>
+    <p>
+      <b>&lt;br></b> is a void tag that ends a line and begins a new one.<br>
+      <b>&lt;p></b> is a tag that creates a paragraph like box around its content.
+    </p>
+  </div>
+  <div class="concept" id="lesson1-5">
+    <div class="concept-title">
+      Inline vs. Block tags
+    </div>
+    <p>
+      <span class="concept-desc">
+        <em>
+          Inline tags affect a single line of code.<br>
+          Block tags create an invisible box around content.
+        </em>
+      </span>
+    </p> 
+    <div class="flex-container">
+      <div class="flex-item">
+        <b>Inline:</b>
+        <ul>
+          <li>&lt;b></li>
+          <li>&lt;img></li>
+          <li>&lt;em></li>
+          <li>&lt;span></li> 
+        </ul>
+      </div>
+      <div class="flex-item">
+        <b>Block:</b>
+        <ul>
+          <li>&lt;p></li>
+          <li>&lt;div></li>
+          <li>&lt;form></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="lesson">
+ <h1 id="lesson-2"> Lesson 2: Creating Structured Documents in HTML</h1>
+  <div class="concept" id="lesson2-1">
+    <div class="concept-title">
+      Developer Tools
+    </div>
+    <p>
+      There are several tools the developers use to create web pages and to, in a way,<br>
+      reverse engineer webpages as well. The Chrome browser has a built-in developer<br>
+      tool setup that allows one to view the source code of the webpage they are viewing.
+    </p>
+  </div>
+  <div class="concept" id="lesson2-2">
+    <div class="concept-title">
+      The Tree-like Structure of HTML
+    </div>
+    <p>
+      The tree-like structure of HTML works similar to a family tree, in the sense<br>
+      that one "box" can branch down into multiple boxes within a box.
+    </p>
+    <div class="image-container"> 
+        <img src="http://watershedcreative.com/naked/img/dom-tree.png" alt="woops, guess I forgot something..">
+    </div>
+  </div>
+  <div class="concept" id="lesson2-3">
+    <div class="concept-title">
+      Boxes and Indenetation in HTML
+    </div>
+    <p>
+      The "boxes" on a webpage that contain content coorelate to the indentation
+      in the HTML document. The outermost "boxes" are to the far left, every "box"
+      within another is indented to the right. The farther to the right code is
+      indented, the deeper within the "box" it is.
+    </p>
+    <p>
+      This makes it easier to navigate your way through the HTML and find what
+      is contained within what.
+    </p>
+  </div>
+  <div class="concept" id="lesson2-4">
+    <div class="concept-title">
+      Text Editing Programs
+    </div>
+    <p>
+      Developers also use text editing programs that are specialized for coding in various computer languages. These text editors colorcode certain elements and provide reference information for programming. Examples of such programs are:<br>
+      <ul style="list-style: circle;">
+        <li><a href="http://scratchpad.io/workable-knife-8969">Scratchpad.io</a></li>
+        <li><a href="http://codepen.io/">Codepen</a></li>
+        <li><a href="http://www.sublimetext.com/">Sublime</a></li>
+    </ul>
+  </div>
+</div>
+<div class="lesson">
+  <h1 id="lesson-3"> Lesson 3: Adding CSS style to HTML structure </h1>
+   <div class="concept" id="lesson3-1">
+     <div class="concept-title">
+       Avoiding Repetition
+     </div>
+     <span class="concept-desc">
+       Avoiding repetition is crucial to programmers for multiple reasons.
+     </span>
+     <p>
+       When repetition is not avoided, it can cause programmers to do the same thing
+       over and over. Repeating the same style into multiple html elements rather than
+       grouping them into CSS classes can greatly increase the chance of code errors. Consistency is important and its much easier to achieve consistant style when
+       not repeating code over and over for each similar element. Instead, using CSS, we can apply consistent style to pages without repeating code.       
+     </p>     
+   </div>
+   <div class="concept" id="lesson3-2">
+     <div class="concept-title">
+       CSS
+     </div>
+     <span class="concept-desc">
+       Cascading Style Sheets
+     </span>
+     <p>
+       CSS stands for Cascading Style Sheets. It is a language used to give style to
+       html. Using classes, we declare an html element to be a css class and apply style to all elements that share the same class. Thus avoiding having to style
+       each element individually.
+     </p>
+   </div>
+</div>
+<div class="lesson">
+  <h1 id="lesson-4"> Lesson 4: Introduction to 'Serious' Programming</h1>
+
+  <div class="concept" id="lesson4-1">
+    <div class="concept-title">Computers vs Other Machines</div>
+    <span class="concept-desc">
+      Toaster vs Computer
+    </span>
+    <p>
+      There are man different types of machines out there and most are designed
+      with a single a few specific purposes in mind. Without any physical altering
+      these machines will only perform the tasks they were made to do. But a computer is designed to be able to do almost anything the user desires, so long as the user can write a program that gives the computer a very specific sequence of instructions.
+    </p>
+  </div>
+  <div class="concept" id="lesson4-2">
+    <div class="concept-title">
+      Computer Programs
+    </div>
+    <span class="concept-desc">
+      A computer program is a way to give instructions to a computer
+    </span>
+    <p>
+      This specific sequence of instructions is mostly what we refer to as a computer program. The programs allow us to get the computer to perform the tasks we want. Ranging from web browsers and games to text editors or even print statements are all examples of computer programs.
+    </p>
+    <p>
+      These programs take a form of written communication or, programming language, and often hands it to an 'interpreter' which then translates it so the computer can understand and execute the instructions.
+    </p>
+  </div>
+  <div class="concept" id="lesson4-3">
+    <div class="concept-title">
+      Programming Languages
+    </div>
+    <span class="concept-desc">
+      What makes a programming language
+    </span>
+    <p>
+      A programming language is a set of rules or, language, that developers can use to write instructions for a computer. There are many programming languages, a few being: Java, C#, and Python.
+    </p>
+  </div>
+  <div class="concept" id="lesson4-4">
+    <div class="concept-title">
+      Python
+    </div>
+    <span class="concept-desc">
+      Python is a programming language
+    </span>
+    <p>
+      Python is a programming language that also has an interpreter. Interpreters take the code programmers write using the python language and turns it into a form which the computer can understand and follow. When you code in Python you hit 'run' and the Python interpreter converts the code you wrote and sends it to the computer and the computer (hopefully) performs the task(s) specified.
+    </p>
+  </div>
+  <div class="concept" id="lesson4-5">
+    <div class="concept-title">
+      Grammar in Programming
+    </div>
+    <span class="concept-desc">
+      Just like human languages, programming languages have a form of grammar.
+    </span>
+    <p>
+      Human languages have grammar that dictates what is correct or incorrect usage of the language. Programming languages essentially have the same thing.
+    </p>
+    <p>
+      When dealing with humans however, context can come into play and people can usually figure it out even if the grammar isnt correct. But a computer, can not. So programmers have to write exact code in perfect 'grammar' in order for the computer to understand.
+    </p>
+    <div class="flex-container">
+      <div class="flex-item">
+        Human Languages:<br>
+        <p>Sentence = Subject verb object</p>
+      </div>
+      <div class="flex-item">
+        Python:
+        <p>Expression  = Expression operator expression</p>
+      </div>
+    </div>
+  </div>
+  <div class="concept" id="lesson4-6">
+    <div class="concept-title">
+      Python Expressions
+    </div>
+    <span class="concept-desc">
+      Python expressions are valid 'sentences' in the Python languages
+    </span>
+    <p>
+      An expression is similar to a sentence in human languages, it is a statement with correct 'grammar' which the computer will understand once interpreted.
+    </p>
+    <div class="flex-container">
+      <div class="flex-item">
+        print 1 + 1
+      </div>
+      <div class="flex-item">
+        print 1 +
+      </div>
+    </div>
+    <p>
+      The example on the right is a python expression with correct grammar, the one on the left is incorrect. A python expression can not end with an operator (+).
+    </p>
+  </div>
+</div>
+<div class="lesson">
+  <h1 id="lesson-5"> Lesson 5: Variables and Strings</h1>
+  
+  <div class="concept" id="lesson5-1">
+    <div class="concept-title">Variables in Python</div>
+    <span class="concept-desc"> Variables are very useful tools</span>
+    <p>
+      In Python, variables are like little containers that hold values inside them. These values can be manipulated or swapped out without changing the name of the variable itself.
+    </p>
+    <div class="flex-container">
+      <div class="flex-item">my_var = 5</div>
+      <div class="flex-item">This puts the value of 5 inside the variable my_var</div>
+    </div>
+    <br>
+    <div class="flex-container">
+      <div class="flex-item">my_var = 'cheese'</div>
+      <div class="flex-item">This puts the word cheese in the variable my_var </div>
+    </div>
+  </div>
+  <div class="concept" id="lesson5-2">
+    <div class="concept-title">Assigning Values to Variables</div>
+    <span class="concept-desc">Variables are representatives of values, and as such must be assigned a value to hold</span>
+    <p>
+      A variable must be assigned a value to hold, this value can be a number or a string of letters/words. It can even be assigned the result of an expression.
+    </p>
+    <div class="flex-container">
+      <div class="flex-item">my_var = 5 <br> my_var = 'cheese'</div>
+      <div class="flex-item">my_var = 5 + 7 - 2 <br> my_var = 'cheese' + 'fries'</div>
+    </div>
+    <p>
+      The examples on the right would give the value of 10 to my_var or assign the word cheesefries to the variable.
+    </p>
+  </div>
+  <div class="concept" id="lesson5-3">
+    <div class="concept-title">The = in Math vs in Python</div>
+    <span class="concept-desc">Whether if its being used in programming or in math, the = has a slightly different meaning.</span>
+    <p>
+      In math, the = typically means one side of the sign, is the same as the otherside of the sign. In programming it simply means the item on the left is going to represent whatever the value or resulting value is on the right.
+    </p>
+    <p>
+      If approached mathematically, lets say my_var = 5, then further down the line we say my_var = 7, well 5 is not the same as 7 so this does not make any sense. In the programming world this mean the my_var is dropping the value of 5 and taking in the new value of 7.
+    </p>
+    <p>
+      Then, further down if we added my_var = my_var + 3, the new value of my_var would be 10, since we are taking the previous value my_var once held, 7, adding 3 to it and replacing the value in my_var with this result.
+    </p>
+  </div>
+  <div class="concept" id="lesson5-4">
+    <div class="concept-title">How Variables are Useful</div>
+    <span class="concept-desc">Variables are extremely useful to programmers in many various ways.</span>
+    <ul>
+      <li>They improve code readability by allowing programmers to use names for values that make sense to humans.</li>
+      <li>They give a way to store data and recall it easily.</li>
+      <li>Allows for data to be manipulated but still have the same name.</li>
+    </ul>
+  </div>
+  <div class="concept" id="lesson5-5">
+    <div class="concept-title">Strings vs Numbers</div>
+    <span class="concept-desc">Variables can be assigned either a string or a number.</span>
+    <p>
+      In Python, 2 is not the same thing as '2' or "2". 2 is number and can be treated as such, meaning it can be added to or subracted from or have ther numbers add to it. But '2' and "2" are both what we call, strings. These strings represent alphabetic values rather than numeric and can be a single letter, a sentence, or a whole paragraph.
+    </p>
+    <p>
+      So while print 2 + 2 will print the number 4, print '2' + '2' will print the number 22. Just like print 'cheese' + 'fries' will print the word cheesefries.
+    </p>
+  </div>
+</div>
+<div class="lesson">
+  <h1 id="lesson-6">Lesson 6: Functions</h1>
+  <div class ="concept" id="lesson6-1">
+    <div class="concept-title"> What a Function Is</div>
+    <span class="concept-desc">Functions are an essential building block to most programming.</span>
+    <p>
+      Functions are basically very small, typically single-purpose, programs that developers can create and use to perform procedures or methods without having to rewrite the code that the function contains, each time they use it.
+    </p>
+  </div>
+  <div class="concept" id="lesson6-2">
+    <div class="concept-title">Creating vs Using Functions</div>
+    <span class="concept-desc">Functions can both be created and used by programmers</span>
+    <p>
+      When creating a function, a programmer must first define what it is (name and procedure it will perform) and what it needs (input/arguments/operands). After defining what a function needs and what it does with what it is given, it can be callled upon to perform its task anytime needed so long it is given the proper input.
+    </p>
+  </div>
+  <div class ="concept" id="lesson6-3">
+    <div class="concept-title">The Importance of Return Statements</div>
+    <span class="concept-desc">Input and procedures to perform are not enough for a function to be useful.</span>
+    <p>
+      As well as needing arguments to perform its task, a function also needs a return statement in order to make its work have any result and to make its existance worthwhile. A function can perform a procedure perfectly, but without a return statement to give the output of its work, it will never have an effect on what it was called upon do.
+    </p>
+  </div>
+</div>
+<div class="lesson">
+    <h1 id="lesson-7">Lesson 7: Control Flow &   Loops</h1>
+
+    <div class="concept">
+            <div class="concept-title" id="7-1">Boolean Values</div>
+            <span class="concept-desc">Boolean values are used to check if an expression is true.</span>
+            <p>
+              Boolean values are essentially just, True or False. If using the code: print True or False. The python interpreter checks to see if the first expression is true, if so, it stops there and prints True. If we did: print False or True, the interpreter checks the first expression, being false, it will continue to the next expression. Sine the next expression is true, it will print True.
+            </p>
+         </div>
+     <div class="concept">
+            <div class="concept-title" id="7-2">If Statements</div>
+            <span class="concept-desc">If statements run a block of code if a specific condition is met.</span>
+            <p>
+              An If statement is a way to run a block of code as long as the stated text expression's value is True. If the test expression is False then it will skip the code contained within the If.<br><br>
+              if &lttest expresson>:<br>
+              &nbsp&nbsp&nbsp&nbsp&ltcode block><br>
+              <br>
+              If statements typically use comparisons to determine if their code should be ran.(&lt, >, ==, !=, &lt=, >=)<br>
+
+              a = 0<br>
+              if a < 10:<br>
+              &nbsp&nbsp&nbsp&nbspprint a<br>
+              &nbsp&nbsp&nbsp&nbspa = a + 1<br>
+              <br>
+              The above if statement will run so long as the variable 'a' is smaller than 10. Inside the code it prints the value of 'a' then adds 1 to it and the interpreter is sent back to the begining of the if statement. One the value of 'a' reaches 10, 10 is not less than 10 so the interpreter now skips over the code inside the if.
+            </p>
+         </div>
+     <div class="concept">
+            <div class="concept-title" id="7-3">Or Statements</div>
+            <span class="concept-desc">An or statement takes two test expressions and checks if one or the other is true.</span>
+            <p>
+                If statements can also have multiple test expressions connect with an or statement. By using or, the interpreter will determine whether or not to run the code in an if, so long as one of the test expressions is True.<br>
+                age = 30<br>
+                <br>
+                if age < 20 or age == 30:<br>
+                &nbsp&nbsp&nbsp&nbsp&ltcode><br>
+                <br>
+                The example above would send the interpreter through the if block as long as the variable 'age' is under 20 or if it is equal to 30. It will check if the first expression is true. Since 30 is not less than 20, it goes to the next expression after the or, since 30 is in fact equal to 30, it will send the interpreter through the block.
+            </p>
+         </div>
+
+
+</div>
+
+
+</body>
+</html>

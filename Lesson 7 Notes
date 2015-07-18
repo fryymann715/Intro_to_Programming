@@ -1,0 +1,40 @@
+LESSON: 7
+NAME: Control Flow & Loops
+TITLE: Boolean Values
+DESC: Boolean values are essentially just, True or False. If using the code: print True or False. The python interpreter checks to see if the first expression is true, if so, it stops there and prints True. If we did: print False or True, the interpreter checks the first expression, being false, it will continue to the next expression. Sine the next expression is true, it will print True.
+TITLE: If Statements
+DESC: An If statement is a way to run a block of code as long as the stated text expression's value is True. If the test expression is False then it will skip the code contained within the If.<br><br>
+if &lttest expresson>:<br>
+&nbsp&nbsp&nbsp&nbsp&ltcode block><br>
+<br>
+If statements typically use comparisons to determine if their code should be ran.(&lt, >, ==, !=, &lt=, >=)<br>
+
+a = 0<br>
+if a < 10:<br>
+&nbsp&nbsp&nbsp&nbspprint a<br>
+&nbsp&nbsp&nbsp&nbspa = a + 1<br>
+<br>
+The above if statement will run so long as the variable 'a' is smaller than 10. Inside the code it prints the value of 'a' then adds 1 to it and the interpreter is sent back to the begining of the if statement. One the value of 'a' reaches 10, 10 is not less than 10 so the interpreter now skips over the code inside the if.
+TITLE: Or Statements
+DESC: If statements can also have multiple test expressions connect with an or statement. By using or, the interpreter will determine whether or not to run the code in an if, so long as one of the test expressions is True.<br>
+      age = 30<br>
+      <br>
+      if age < 20 or age == 30:<br>
+      &nbsp&nbsp&nbsp&nbsp&ltcode><br>
+      <br>
+      The example above would send the interpreter through the if block as long as the variable 'age' is under 20 or if it is equal to 30. It will check if the first expression is true. Since 30 is not less than 20, it goes to the next expression after the or, since 30 is in fact equal to 30, it will send the interpreter through the block.
+TITLE: While Loops
+DESC: While loops are blocks of code that are repeatedly run so long as the test expression continues to be true; once false, the interpreter jumps out of the while loop and proceeds with the rest of the code. <br>
+a = 0<br>
+while a < 10:<br>
+  print a
+  a += 1
+TITLE: Break Statements
+DESC: A break statement ejects the interpreter from the loop it is currently in. Its the same thing as when the test expression is false, the interpreter skips over the code in the loop and continues with the rest of the program. A break statement is simply a way to force this to happen.
+TITLE: Infinite Loops
+DESC: Sometimes loops can hit a point where the text expression will never be false and it will continue to run forever. Sometimes this can be intentional like you want a loop to infinitely loop until a specific condition is met at which you can insert a break statement. Mostly however, an infinite loop is a result of an error in code. It could be the counter variable isn't being incremented at the end of the loop therefore the loop will run forever.
+TITLE: Debugging
+DESC: A lot of times the first time through, your code may not work properly or at all. This is where debugging comes into play. Debugging is the systematic, search and destroy type method of eliminatiing errors in code.
+
+Using print statements at various points of the program can show you whats going on behind the scenes of a program and let you know if what your intending your code to do as actually happening they way you meant for it to happen. These print
+statements can help you find where in your program things aren't going right and help you to solve the problem.
