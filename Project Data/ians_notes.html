@@ -8,6 +8,11 @@
 
 <body>
 
+<<<<<<< HEAD
+=======
+/***************************************************************************************** TOC ********************************************************************** */
+
+>>>>>>> origin/master
 <div class="TOC">
   <h1>Table of Contents</h1>
   <div class="toc-contents">
@@ -94,6 +99,7 @@
   </div>
 </div>
 
+/***************************************************************************************** LESSON 1 ********************************************************************** */
 
 <div class="lesson">
  <h1 id="lesson-1">Lesson 1: The Basics</h1>
@@ -229,6 +235,9 @@
 
   </div>
 </div>
+
+/***************************************************************************************** LESSON 2 ********************************************************************** */
+
 <div class="lesson">
  <h1 id="lesson-2"> Lesson 2: Creating Structured Documents in HTML</h1>
   <div class="concept" id="lesson2-1">
@@ -281,6 +290,9 @@
     </ul>
   </div>
 </div>
+
+/***************************************************************************************** LESSON 3 ********************************************************************** */
+
 <div class="lesson">
   <h1 id="lesson-3"> Lesson 3: Adding CSS style to HTML structure </h1>
    <div class="concept" id="lesson3-1">
@@ -311,6 +323,9 @@
      </p>
    </div>
 </div>
+
+/***************************************************************************************** LESSON 4 ********************************************************************** */
+
 <div class="lesson">
   <h1 id="lesson-4"> Lesson 4: Introduction to 'Serious' Programming</h1>
 
@@ -408,9 +423,11 @@
     </p>
   </div>
 </div>
+
+/***************************************************************************************** LESSON 5 ********************************************************************** */
+
 <div class="lesson">
   <h1 id="lesson-5"> Lesson 5: Variables and Strings</h1>
-  
   <div class="concept" id="lesson5-1">
     <div class="concept-title">Variables in Python</div>
     <span class="concept-desc"> Variables are very useful tools</span>
@@ -474,6 +491,9 @@
     </p>
   </div>
 </div>
+
+/***************************************************************************************** LESSON 6 ********************************************************************** */
+
 <div class="lesson">
   <h1 id="lesson-6">Lesson 6: Functions</h1>
   <div class ="concept" id="lesson6-1">
@@ -498,6 +518,9 @@
     </p>
   </div>
 </div>
+
+/***************************************************************************************** LESSON 7 ********************************************************************** */
+
 <div class="lesson">
         <h1 id="lesson-7">Lesson 7: Control Flow & Loops</h1>
         <div class="concept">
@@ -577,9 +600,11 @@
 
             Using print statements at various points of the program can show you whats going on behind the scenes of a program and let you know if what your intending your code to do as actually happening they way you meant for it to happen. These print statements can help you find where in your program things aren't going right and help you to solve the problem
             </p>
-         </div>
-     
+         </div>     
     </div>
+
+/***************************************************************************************** LESSON 8 ********************************************************************** */
+
 <div class="lesson">
         <h1 id="lesson-8">Lesson 8: Structured Data</h1>
         <div class="concept">
@@ -588,8 +613,7 @@
             <p>
             Lists are strutctured data types that hold a 'list' of variables which can include both integers and strings as well as other lists.
             </p>
-         </div>
-     
+         </div>     
         <div class="concept">
             <div class="concept-title" id="lesson8-2">Mutation</div>
             <span class="concept-desc"></span>
@@ -602,40 +626,35 @@
             The append() function is an example of mutation, it adds a single entry to the end of a list, essentially changing the value of the list without reassigning the entire variable.<br>
             mylist.append(5) if previously mylist = [1, 2, 3, 4], it would now be [1, 2, 3, 4, 5]. If we then did: mylist.append([6, 7, 8]) mylist would then be [1, 2, 3, 4, 5, [6, 7, 8]] because append only adds one entry but it does not reassign any of the values held in the other slots.
             </p>
-         </div>
-     
+         </div>     
         <div class="concept">
             <div class="concept-title" id="lesson8-3">Aliasing</div>
             <span class="concept-desc"></span>
             <p>
             Lists can also be aliased, This is handy when you need a function to modify the values of a list that exists outside the function itself. Aliasing works much like it does with superheroes, Batman and Bruce Wayne are two identities for the same person. What happens to Batman also happens to Bruce Wayne.
             </p>
-         </div>
-     
+         </div>     
         <div class="concept">
             <div class="concept-title" id="lesson8-4">For Loops</div>
             <span class="concept-desc"></span>
             <p>
             For loops are especially useful when working with lists. A for loops is a loop that will perform it's block of code for every slot in the list and break out of this loop once it reaches the end of the entries in the list. Very useful when cycling through list and arrays.
             </p>
-         </div>
-     
+         </div>     
         <div class="concept">
             <div class="concept-title" id="lesson8-5">Index and In</div>
             <span class="concept-desc"></span>
             <p>
             Index is a built in function that finds the location of a specified value within a list and returns the location number where it was found. If said value is not found, it produces an error. <em>in</em> checks inside a list to see if a specified value is present, and returns a boolean value. On the same side other hand, you could use <em>not in</em> to make sure a value is not found within a list.
             </p>
-         </div>
-     
+         </div>     
         <div class="concept">
             <div class="concept-title" id="lesson8-6">Problem Solving</div>
             <span class="concept-desc"></span>
             <p>
             Sometimes there are some steps that need to be taken before code is written, a programmer has to know how they are going to solve the problem before the start coding. First step is Don't Panic, next ask: What is the problem? What are the inputs? What are the outputs?  Then work through some examples by hand to try and figure out how to get the outputs from the inputs using pseuo code. Pseudo code is kind of like writing in programming languages in a very vague and general way. Syntax usage isnt exact but one writes pseudo code using the same concepts as programming. Try to use simple mechanical solutions and once you start coding, develop your code incrementally using small functions and test them as you go.
             </p>
-         </div>
-     
+         </div>     
         <div class="concept">
             <div class="concept-title" id="lesson8-7">Defensive Programming</div>
             <span class="concept-desc"></span>
@@ -644,10 +663,63 @@
             assert daysBetweenDates(2013, 1, 1, 2013, 1, 1) == 0<br>
             If this assertion is not true, it stops the program and throws an error while compiling. This makes it easier to search for and destroy bugs within your code.
            </p>
-         </div>
-     
+         </div>     
     </div>
 
+/***************************************************************************************** LESSON 9 ********************************************************************** */
+
+    <div class="lesson">
+        <h1 id="lesson-9">Lesson 9: Program with Objects</h1>
+        <div class="concept">
+            <div class="concept-title" id="lesson9-1">OOP</div>
+            <span class="concept-desc"></span>
+            <p>
+            Object-oriented programming, or OOP, is a model of programming that focuses objects and data as opposed to actions and logic. In OOP, programmers create and use what are called 'classes' to in turn create 'objects' that can be manipulated to fit the needs of the programmer. These concepts make programming easier, especially on larger scale projects, because once a class is defined programmers can create countless objects from that class without much coding.
+            </p>
+         </div>     
+        <div class="concept">
+            <div class="concept-title" id="lesson9-2">Abstraction</div>
+            <span class="concept-desc"></span>
+            <p>
+            The concept of focusing only the necessary details that pertain to your program its needs is called abstraction. By focusing only on the types of things and the operations available instead of the concrete implementation of things, you can create code that is more simple, more general, and more abstract, thus increasing your code's ability to be reused.
+            </p>
+         </div>     
+        <div class="concept">
+            <div class="concept-title" id="lesson9-3">Classes</div>
+            <span class="concept-desc"></span>
+            <p>
+            A class is like a blueprint for objects in OOP. Like how a blueprint has all the attributes of a building within it, a class contains all the information an instance of that class will have. When a class is defined it is defined with any number of variables and/or functions. Once initialized, Python will create space in memory for an instance of that class with all the information that is defined in the class.
+            </p>
+         </div>     
+        <div class="concept">
+            <div class="concept-title" id="lesson9-4">Objects</div>
+            <span class="concept-desc"></span>
+            <p>
+            An object, is an instance of a class. So when an object is created, you are actually calling a function in the class file to create that space in memory for the object. Once created, an object will have all the variables and functions that the class has within it and can perform all the functions defined in the class. So one class can give way to limitless objects without having to rewrite all the code that is written in the class.
+            </p>
+         </div>     
+        <div class="concept">
+            <div class="concept-title" id="lesson9-5">Inheritance</div>
+            <span class="concept-desc"></span>
+            <p>
+            When an object is crearted, it gets all the things the class has, this is called inheritance. Much like the concept of inheriting features and quirks from your parents, an object inherits all the attributes of its class. This allows a programmer to write the common denominator code into the class and create multiple objects of that class each with different information stored in their variables without having to rewrite the code for each object, this reduces development time and ensures more accurate code.
+            </p>
+         </div>     
+        <div class="concept">
+            <div class="concept-title" id="lesson9-6">Modules</div>
+            <span class="concept-desc"></span>
+            <p>
+            Modules are files contained within a library that have functions and classes in them that may be used in other programs and code. These modules must be imported at the begining of a Python file if a program within wants to use a function or class in the module. This allows programmers to easily use code they have previously written, or that someone else has previously written, within new programs. With the use of libraries and the modules they contain, programmers do not have to write every step for what they want their program to do. This is what really makes the concept of abstraction possible.
+            </p>
+         </div>     
+        <div class="concept">
+            <div class="concept-title" id="lesson9-7">Data Modeling</div>
+            <span class="concept-desc"></span>
+            <p>
+            With the concept of abstraction and the use of modules, classes, and objects, developers need only identify all the objects they want to manipulate and how they relate to one another. This is called Data Modeling, and this enables developers to easily map out what they want their program to do, what it needs to do it, and how it is going to do it
+            </p>
+         </div>     
+    </div>
 
 </body>
 </html>
