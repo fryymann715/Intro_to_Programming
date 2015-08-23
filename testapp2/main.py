@@ -14,40 +14,59 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+import os
+import jinja2
 import webapp2
 
-form_html = """
-<form>
-<h2>Add Food</h2>
-<input type="text" name="food">
-%s
-<button>Add</button>
-</form>
-"""
-
-hidden_html = """
-<input type="hidden" name="food" value="%s">
-"""
-
-shopping_list_html = """
-<br>
-<br>
-<h2>Shopping List</h2>
-<ul>
-%s
-</ul>
-"""
+template_dir = os.path.join(os.path.dirname(__file__), 'templates')
+jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir),
+                               autoescape=True)
 
 
 class Handler(webapp2.RequestHandler):
     def write(self, *a, **kw):
         self.response.out.write(*a, **kw)
 
+    def render_str(self, template, **params):
+        t = jinja_env.get_template(template)
+        return t.render(params)
+
+    def render(self, template, **kw):
+        self.write(self.render_str(template, **kw))
+
 
 class MainHandler(Handler):
     def get(self):
-        self.write(form_html)
+        items = self.request.get_all("food")
+        self.render("shopping_list.html", items=items)
+
+
+class FizzHandler(Handler):
+    def get(self):
+        n = self.request.get('n', 0)
+        n = n and int(n)
+        self.render('fizzbuzz.html', n = n)
+
+
+class BillPayHandler(Handler):
+    def get(self):
+        bills = self.request.get("bill")
+        amounts = self.request.get("amount")
+        bill_list = []
+        for bill in bills:
+            for amount in amounts:
+                bill_d = {'name': bill, 'amount': amount}
+                bill_list.append(bill_d)
+
+        bill_set = {key: value for key, value in zip(bills, amounts)}
+
+        self.render("billpay.html", bill_list=bill_list)
+
+    # def pop_dict(self, bill_name, bill_amount):
+
+
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/', MainHandler), ('/fizzbuzz', FizzHandler), ('/billpay', BillPayHandler)
 ], debug=True)

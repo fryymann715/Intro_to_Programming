@@ -1,0 +1,31 @@
+<form>
+    <h2>Bill Pay</h2>
+    <label>Bill:
+        <input type="text" name="bill">
+    </label>
+
+
+    <label>Amount:
+        <input type="text" name="amount">
+    </label>
+    <button>Add</button>
+
+
+        {% if bill_list %}
+            {% for bill in bill_list %}.
+                <input type="hidden" name="bill" value="{{ bill['name'] }}">
+                <input type="hidden" name="amount" value="{{ bill['amount'] }}">
+            {% endfor %}
+        {% endif %}
+
+    {% if bill_list %}
+        <br>
+        <br>
+        <h2>Current Bills: </h2>
+        <ul>
+        {% for bill in bill_list %}
+            <li>{{bill['name']}}        {{bill['amount']}}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</form>
