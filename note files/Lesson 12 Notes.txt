@@ -1,0 +1,12 @@
+LESSON: 12
+NAME: Python: Break, Modulus, %amp; Dictionaries
+
+TITLE: The Modulus Operator
+DESC: The modulus operatore looks like this: 15%2. Basically it is asking for the remainder from the first number divided by the second. So in this case, 15%2 would be 1 because 2 goes into 15 7 times, with a remainder of 1. 2 x 7 = 14, 15 - 14 = 1. Other examples:<br>
+<br>
+4 % 3 = 1<br>
+15 % 11 = 4<br>
+25 % 4 = 1<br>
+
+TITLE: Break Statement
+DESC: A break statement is used in loops when you want to immmediately stop running the loop and skip to the code that comes after the loop. If you were 

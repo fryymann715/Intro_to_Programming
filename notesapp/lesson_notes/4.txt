@@ -1,0 +1,31 @@
+LESSON: 4
+NAME: Introduction to 'Serious' Programming
+TITLE: Computers vs Other Machines
+DESC: There are man different types of machines out there and most are designed with a single a few specific purposes in mind. Without any physical altering these machines will only perform the tasks they were made to do. But a computer is designed to be able to do almost anything the user desires, so long as the user can write a program that gives the computer a very specific sequence of instructions.
+TITLE: Computer Programs
+DESC: A computer program is a way to give instructions to a computer
+This specific sequence of instructions is mostly what we refer to as a computer program. The programs allow us to get the computer to perform the tasks we want. Ranging from web browsers and games to text editors or even print statements are all examples of computer programs.
+These programs take a form of written communication or, programming language, and often hands it to an 'interpreter' which then translates it so the computer can understand and execute the instructions.
+TITLE: Programming Languages
+DESC: What makes a programming language? A programming language is a set of rules or, language, that developers can use to write instructions for a computer. There are many programming languages, a few being: Java, C#, and Python.
+TITLE: Python
+DESC: Python is a programming language
+Python is a programming language that also has an interpreter. Interpreters take the code programmers write using the python language and turns it into a form which the computer can understand and follow. When you code in Python you hit 'run' and the Python interpreter converts the code you wrote and sends it to the computer and the computer (hopefully) performs the task(s) specified.
+TITLE: Grammar in Programming
+DESC: Just like human languages, programming languages have a form of grammar.
+Human languages have grammar that dictates what is correct or incorrect usage of the language. Programming languages essentially have the same thing.
+ When dealing with humans however, context can come into play and people can usually figure it out even if the grammar isnt correct. But a computer, can not. So programmers have to write exact code in perfect 'grammar' in order for the computer to understand.
+<hr>
+Human Languages:<br>
+Sentence = Subject verb object
+<hr>
+Python:<br>
+Expression = Expression operator expression
+<hr>
+Python Expressions:<br>
+Python expressions are valid 'sentences' in the Python languages.<br>
+An expression is similar to a sentence in human languages, it is a statement with correct 'grammar' which the computer will understand once interpreted.
+<hr>
+print 1 + 1&nbsp&nbsp&nbsp&nbsp&nbsp
+print 1 +<br>
+The example above is a python expression with correct grammar, the one on the right is incorrect. A python expression can not end with an operator (+)))

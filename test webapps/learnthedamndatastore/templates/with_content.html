@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+    {% block posts %}
+
+    <h3>Doin the post template dood!</h3>
+
+    {% if posts %}
+        {% for post in posts %}
+        <div><h3>{{post.author.date}}</h3>
+            <blockquote style="color: blue; font-style: italic;">{{post.content}}</blockquote>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+
+    {% endblock %}

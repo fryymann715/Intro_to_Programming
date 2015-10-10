@@ -1,0 +1,193 @@
+***** HTML Templates *****
+
+HTML templates are a way for programs to look to an html file to automatically generate a string
+rather than hardcoding the strings into the program itselt. Making it easier to modify the html
+if needed.
+
+*** my app.yaml file ***
+
+application: testapp2
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: .*
+  script: main.app
+
+- url: /.*
+  script: templates.app
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
+
+- name: jinja2
+  version: latest
+
+***
+
+In the configuration file I had to make a new library entry for jinja. Here I learned that
+the - url entries an the library entries all need blank lines between them in order for the file
+to run properly.
+
+Also, not sure if this made a difference, but I added the - url: /.* entry to match the instructor's.
+His did not have the main.app script entry but had the templates.app one so I kept the main and added
+the templates.
+
+
+Below I imported the modules jinja, and os.
+
+*** main.py ***
+
+import os
+import jinja2
+import webapp2
+
+template_dir = os.path.join(os.path.dirname(__file__), 'templates')
+jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir))
+
+***
+ 
+The os module used to create the template_dir string, which
+uses os.path.join() with os.path.dirname(__file__) passed into it which takes the current directoy
+of the running program, and the string 'templates'. join() simply takes the path found in dirname(__file__)
+and adds 'templates' to it in typical path fashion: currentdirectory/templates. join() makes sure to add the correct slashes to the path name to leave less room for human error.
+
+The jinja module is used to create the variable jinja_env which is an instance of the class jinja2.Environment() which I assume create a loader using jinja2.FileSystemLoader() with the template_dir I created beforehand.
+
+
+**** Variable Substitution ****
+
+{{ variable }}
+
+**** Statement Syntax ****
+
+{% statement %}
+
+{% end statement %}
+
+
+
+{% if name == "steve" %}
+
+	Hello, Steve.
+
+{% else %}
+	
+	Who are you?
+
+{% endif %}
+
+
+**** FizzBuzz Example ****
+
+This is bit of code from my fizzbuzz.html template. It creates an ordered list and within that last it runs a {% for %} loop. Inside that loop it create a <li> entry and runs if statements inbetween the <li></li> tags.
+
+These if statements check if the given number is evenly divisible by 15, x % 15 == 0. This checks if there is a remainder from the dividing x by 15. If so then it is not divisible by both 5 and 3 and it moves to the next
+if statement. {% elif x % 3 == 0 %} checks if x is evenly divisible by 3, if not if goes to the next statement and checks if it it is divisible by 5, x fails all 3 checks, then x itself is simply printed out.
+
+
+<ol>
+    {% for x in range(1, n+1) %}		# Repeat loop x number of times, x being the range between 1 and n + 1.
+        <li>
+        {% if x % 15 == 0 %}
+            FizzBuzz
+        {% elif x % 3 == 0 %}
+            Buzz
+        {% elif x % 5 == 0 %}
+            Buzz
+        {% else %}
+           {{x}}
+        {% endif %}
+        </li>
+    {% endfor %}
+</ol>
+
+
+I then end the if statements with {% endif %} and eclose it all within the list with </li>. The for loop is then ended with {% endfor %}. And all of that wrapped up with the closing ordered list tage </ol>
+
+
+***** main.py revised *****
+
+# So now the main.py file has been changed to use these templates instead of various strings and
+  string substitutions, and to use variable syntax within the templates.
+
+  In the jinja_env declaration I added the autoescape=True parameter to automatically escape all HTML
+  characters from the input when entered into the template.
+
+import os
+import jinja2
+import webapp2
+
+template_dir = os.path.join(os.path.dirname(__file__), 'templates')
+jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir),
+                               autoescape=True)
+
+
+class Handler(webapp2.RequestHandler):
+    def write(self, *a, **kw):
+        self.response.out.write(*a, **kw)
+
+    def render_str(self, template, **params):
+        t = jinja_env.get_template(template)
+        return t.render(params)
+
+    def render(self, template, **kw):
+        self.write(self.render_str(template, **kw))
+
+
+class MainHandler(Handler):
+    def get(self):
+        items = self.request.get_all("food")
+        self.render("shopping_list.html", items=items)
+
+
+class FizzHandler(Handler):
+    def get(self):
+        n = self.request.get('n', 0)
+        n = n and int(n)
+        self.render('fizzbuzz.html', n = n)
+
+app = webapp2.WSGIApplication([
+    ('/', MainHandler), ('/fizzbuzz', FizzHandler)
+], debug=True)
+
+
+The Handler class has a few more functions defined, render_str() and render().
+
+render_str() takes a string it names template and a list of args, it then creates variable 't', and assigns it to jinja_env.get_template() with the template argument passed into get_template() which in this case when passed the string 'shopping_list.html', opens the template defined in shopping_list.html and passes whatever other arguments(params) were passed along to render_str() in **params.
+
+
+**** Template Inhertiance ****
+
+Templates can be treated as classes in a sense that a template can inherit another template.
+So one could have a base html temmplate which contains the tags and code for the title and footer or whatever
+other html you want to remain the same and have other templates that change only the content portion.
+
+
+
+
+
+
+***
+
+
+***
+
+
+***** Conclusion *****
+
+Benefits to HTML Templates:
+
+-Separate different types of code
+-Make more readable code
+-More secure websites
+-html that is easier to modify
+
+jinja.pocoo.org

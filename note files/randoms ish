@@ -1,0 +1,125 @@
+
+
+-NETWORKS
+
+
+--> a network is a group of entities that can communicaate, even though they are not directly connected.
+
+ - Latency: The time it takes a message to get from source to estintion. (milliseconds | ms)
+
+ - Bandwidth: mount of information that can be transmitted per unit of time. (bits per second | Mbps)
+
+ - Bit: Smallest unit of information. Answer of yes or no. 1 or 0.
+
+ --> Protocols
+ 	- A set of rules that people agree to that tell you how two entities can talk to eachther.
+
+
+	- HTTP: Hyper Text Transfer Protocol
+
+		client <-----> HTTP <-----> server
+
+		Get(object)------->
+						<------- Response (contents of object)
+
+	- URL: Uniform Resource Locator
+
+
+	#query parameters
+
+	http://     www.udacity.com    /.../.../
+	<protocol>		<server>		<path>
+
+	- cache: Stores data so you don't have to retrieve it later. Can be used to make data requests faster.
+
+	# fragments
+
+	http://www.udacity.com/foo?p=1 		/foo?p=1 is the fragment.
+
+	# port: http://localhost:8080/
+							  <port>
+
+
+--> HTTP Responses
+
+
+	 status line:
+	 	http/1.1		200				OK
+	 	 ^version	 	^status code	 ^response phrase
+
+
+	Status Codes:
+		200		ok
+		302		found
+		404		not found
+		500		server error
+
+	- Headers: 
+			Date: tue mar 9 2012 04:33:13 est
+			Server:  Apache / 2.2.3
+			Content Type:  text/html
+			Content Length
+
+
+
+
+nodes
+
+
+	-get and post
+	-http
+	-servers
+
+
+	Get vs Post
+
+get() is used to request documents and data from servers.
+post() is used for making updates to the server.
+
+
+get()
+
+Paramters in URL
+Max URL length
+Ok to cache
+Shoudln't change server data
+
+post()
+
+Parameters in body
+Used for updating data
+No max length
+Not ok to Cache
+Safe to changer server data
+
+
+
+-forms
+
+
+-google app engine
+	-request handlers
+
+
+-modulus and dictionaries
+	-string substitution
+
+
+-validation
+	-escaping and escape characters
+
+
+-html templates
+
+-databases
+
+
+
+Templates - Inheritance
+			-avoid repition
+			-why avoiding repitition is important
+
+servers - how they handle requests, process them, and deliver responses
+
+validation of user input - its importance to site security and user experience
+

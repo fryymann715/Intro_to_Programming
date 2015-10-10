@@ -1,0 +1,38 @@
+LESSON: 5
+NAME: Variables and Strings
+TITLE: Variables in Python
+DESC: Variables are very useful tools
+In Python, variables are like little containers that hold values inside them. These values can be manipulated or swapped out without changing the name of the variable itself.
+
+my_var = 5
+This puts the value of 5 inside the variable my_var
+
+my_var = 'cheese'
+This puts the word cheese in the variable my_var
+TITLE: Assigning Values to Variables
+DESC: Variables are representatives of values, and as such must be assigned a value to hold
+A variable must be assigned a value to hold, this value can be a number or a string of letters/words. It can even be assigned the result of an expression.
+<hr>
+my_var = 5 <br>
+my_var = 'cheese' <br>
+my_var = 5 + 7 - 2 <br>
+my_var = 'cheese' + 'fries' <br>
+The examples above would give the value of 10 to my_var or assign the word cheesefries to the variable.
+<hr>
+The = in Math vs in Python
+Whether if its being used in programming or in math, the = has a slightly different meaning.
+In math, the = typically means one side of the sign, is the same as the otherside of the sign. In programming it simply means the item on the left is going to represent whatever the value or resulting value is on the right.
+
+If approached mathematically, lets say my_var = 5, then further down the line we say my_var = 7, well 5 is not the same as 7 so this does not make any sense. In the programming world this mean the my_var is dropping the value of 5 and taking in the new value of 7.
+
+Then, further down if we added my_var = my_var + 3, the new value of my_var would be 10, since we are taking the previous value my_var once held, 7, adding 3 to it and replacing the value in my_var with this result.
+TITLE: How Variables are Useful
+DESC: Variables are extremely useful to programmers in many various ways.
+They improve code readability by allowing programmers to use names for values that make sense to humans.
+They give a way to store data and recall it easily.
+Allows for data to be manipulated but still have the same name.
+TITLE: Strings vs Numbers
+DESC: Variables can be assigned either a string or a number.
+In Python, 2 is not the same thing as '2' or "2". 2 is number and can be treated as such, meaning it can be added to or subracted from or have ther numbers add to it. But '2' and "2" are both what we call, strings. These strings represent alphabetic values rather than numeric and can be a single letter, a sentence, or a whole paragraph.
+<br>
+So while print 2 + 2 will print the number 4, print '2' + '2' will print the number 22. Just like print 'cheese' + 'fries' will print the word cheesefries.

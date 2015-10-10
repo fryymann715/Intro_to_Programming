@@ -1,0 +1,36 @@
+LESSON: 12
+NAME: Python: More Programming Concepts
+TITLE: The Modulus Operator
+DESC: The modulus operator (%) asks for the remainder of the first number divided by the second. So 15 % 12 would have a result of 3. 12 goes into 15 one time with a remainder of 3. Likewise, 4 % 3 would result in 1.
+<hr>
+15 % 11 = 4<br>
+25 % 4 = 1
+32 % 6 = 2
+TITLE: Break Statements
+DESC: A break statement is used in loops to, as you guessed it, break out of the loop and go to the code immediately after it. It is handy if you want to run a loop as until specific conditions are met and then stop performing that loop and continue with the rest of the program.
+<hr>
+for l in list:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if l == 'Icarus':<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break<br>
+print "We found Icarus!"
+TITLE: Dictionaries
+DESC: A dictionary is a data structure t similar to a list, but instead of being single values, a dictionary contains a list of key-value pairs. Each entry has a key, and a value that the key represents. Rather than the square brackets a list uses, a dictionary uses the curly brackets {} and each entry is started with its key in quotes, followed by a colon and then the value of the key.<br>
+<hr>
+my_dictionary = {'First_Key': 1, 'Second_Key': 2}<br>
+<br>
+<hr>
+To refer to a dicitonary value is also similar to lists but instead of using the numerical placement of the value you simply refer to the key.<br>
+<br>
+print my_dictionary['First_Key']<br>
+print "The value of the second key is: " + my_dictionary['Second_Key']
+TITLE: String Substitution
+DESC: String substitution is used in several programming languages and is handy when you want to use the same string but plug in different variables. Say if you wanted to use the same greeting string, but you wanted that string to be customized with the user's name. You would use %s where you want the variable for the user's name to go.<br>
+<br>
+user_name = "John"<br>
+greeting_string = "Hello, %s, welcome back!" % user_name<br>
+<br>
+Here we use the variable user_name and the string greeting_string. Greeting_string is defined just like a normal string, using the quotations, but %s is put where the variable is going to go and outside the quotes the code % user_name is found. The % indicates to the interpreter that whatever follows is going to replace the %s in the string.<br>
+<br>
+You can also substitute multiple variables into a string with the syntax:<br>
+<br>
+string = "Substituting %s and %s into a single string." % (variable1, variable2)

@@ -1,0 +1,20 @@
+{% extends "home.html" %}
+    {% block create %}
+    <hr>
+    <form action="/createuser" method="post">
+        <label>Choose User Name:
+            <input type="text" name="create_user_name">
+        </label>
+        <br>
+        <label>Choose a Password:
+            <input type="password" name="create_user_password">
+        </label>
+        <br>
+        <label>Retype Password:
+            <input type="password" name="verify_create_user_password">
+        </label>
+        <br>
+        <input type="submit">
+    </form>
+
+    {% endblock %}

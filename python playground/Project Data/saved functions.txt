@@ -1,0 +1,71 @@
+
+
+**** My attempt at user profiles using datastores
+
+
+DEFAULT_USER = 'Guest'
+
+def user_key(user_id=DEFAULT_USER):
+    return ndb.Key('User', user_id)
+
+
+
+
+class User(ndb.Model):
+
+    name = ndb.StringProperty(indexed=True)
+    password = ndb.StringProperty(indexed=False)
+
+
+
+
+
+
+class HomeHandler(Handler):
+    def get(self):
+        user = self.request.get('user')
+        if user:
+             self.redirect("/user_home", user=user)
+        else:
+            self.render("home.html")
+
+    def post(self):
+        self.render('create_user.html')
+
+
+class CreateUser(Handler):
+    def post(self):
+        name = self.request.get('create_user_name').lower()
+        password = self.request.get('create_user_password')
+
+        user = User(parent=user_key(name))
+        user.name = name
+        user.password = password
+        user.put()
+        self.redirect("/user_home?user=%s" % name)
+
+
+class LoginHandler(Handler):
+    def post(self):
+        user_name = self.request.get('user_name').lower()
+        user_pass = self.request.get('user_password')
+        user_query = User.query(ancestor = user_key(user_name))
+        user_list = user_query.fetch()
+        if user_list:
+            self.render("user_home.html", user=user_list)
+        else: self.redirect("/home")
+
+
+class UserHandler(Handler):
+    def get(self):
+        user = self.request.get('user')
+
+        self.render('user_home.html', user=user)
+
+
+        app = webapp2.WSGIApplication([
+    ('/', MainHandler), ('/sign', SignHandler),
+    ('/switch_lesson', LessonSwitch), ('/home', HomeHandler),
+    ('/createuser', CreateUser), ('/login', LoginHandler),
+    ('/user_home', UserHandler)
+], debug=True)

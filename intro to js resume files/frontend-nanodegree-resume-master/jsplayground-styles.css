@@ -1,0 +1,32 @@
+body {
+	background-color:	#D1D1C2;
+}
+
+.top-header {
+	font-weight: bold;
+	font-size: 36;
+	color: #194775;
+	text-align: center;
+}
+
+.page-label {
+	color: #194775;
+}
+
+.cbutton-menu {
+	display: inline-flex;
+	flex-direction: row;
+	justify-content: space-around;
+	border: line;
+	width: 200px;
+
+}
+
+.c-button {	
+	margin: auto;
+
+}
+
+.c-button:hover {
+	background-color:	white;
+}

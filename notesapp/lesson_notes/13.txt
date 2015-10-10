@@ -1,0 +1,6 @@
+LESSON: 13
+NAME: Validation
+TITLE: What is Validation
+DESC: In this case, validation means to make sure the input received from the user is acceptable for use in your programs or if what data you are receiving is what is expected. A programmer must write code or utilize someone elses to check the data received and make sure it is what the program is asking for if they want to avoid errors. If you have a program that requires an integer, a user passing a letter to your program would cause an error. So in order to guarantee that your program will work properly for your users, you must validate the data they submit and make sure it they are valid arguments for your programs.
+TITLE: The Importance of Validation
+DESC: Validation isn't just neccesary to eliminate errors from users accidentally passing invalid data to your programs, but also to prevent people from maliciously attacking your programs by passing code to them. Inputing html elements into forms on a website could potentially 'break' the way the webpage is supposed to run. It could also leave it open for hackers to break into it and steal information fom your programs. In order to prevent these things from happening you should always validate any data receieved from users.

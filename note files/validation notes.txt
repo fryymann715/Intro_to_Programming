@@ -1,0 +1,315 @@
+Get vs Post
+
+get() is used to request documents and data from servers.
+post() is used for making updates to the server.
+
+  get()
+-Paramters in URL
+-Max URL length
+-Ok to cache
+-Shouldn't change server data
+
+  post()
+-Parameters in body
+-Used for updating dataz
+-No max length
+-Not ok to cache
+-Safe to change server data
+
+
+Cut from validation_test.py in note_creator/testing_ground
+
+Validation is a way to make sure the input the server recieves is indeed valid input for what is expected.
+It is also a way to handle input that is not valid data.
+
+
+This is the example code from the instructor in the validation lesson. It makes a list of all the valid months
+there are then creates a dictionary to store those values using a for loop within the call to dict(). Making the key name for each dictionary entry the first three letters of the month and using the lower() function to
+force the whole string to lower case.
+
+
+months = ['January',
+          'February',
+          'March',
+          'April',
+          'May',
+          'June',
+          'July',
+          'August',
+          'September',
+          'October',
+          'November',
+          'December']
+
+months_abbvs = dict((m[:3].lower(), m) for m in months)
+
+def valid_month(month):
+
+    # Basically inside an if statement so that a None is returned automatically
+    # when any argument whose first three letters are not int the dictionary
+    # created by the for loop in the months_abbv declaration.
+
+    if month:
+        short_month = month[:3].lower()  # takes the first 3 letters, .lowercase()
+        return months_abbvs.get(short_month)
+        
+        # uses get() on the dictionary to check for
+        # the matching entry with short_month
+        # if the input does not match, get()
+        # automatically returns None
+
+print valid_month("july")
+# >> None
+
+
+
+The comments are my own from the file I made to follow along with the instructor and mimic what he was
+doing in the video. Resourceful way of using the if statement (if month:) to pretty much send the input
+into the statement immediately and save the task of manually putting in a case to return None if the input
+is invalid, since the if statement in Python will automatically do so.
+
+
+
+Below is the example code from the instructor for testing an input to be a valid day for a month.
+At this stage it isnt set up to check if the month has 30 or 31 days in it but I assume that is to come up
+eventually using the code we wrote to do just that.
+
+The isdigit() worked for the instructor but not for me and im not sure why. But the commented code is what
+I wrote after doing a google search for how to check if a variable is a number in Python. The result was the
+isinstance() function which checks if the supplied value, day, is a valid int, float, or complex object.
+If so, it changes the input from a string to an int, then it is routed to another if statement which checks 
+if the input is larger than 0 and equal to orvless than 31. If true then it returns the input.
+
+def valid_day(day):
+    if day and day.isdigit():
+        day = int(day)
+        if day > 0 and day <= 31:
+            return day
+
+    # if isinstance (day, (int, float, complex)):
+    #     if day >= 1 and day <= 31:
+    #         return int(day)
+
+print valid_day(10)
+
+
+
+Underneath is a copy of the code in my main.py file for my test app using the google app engine.
+It imports the library webapp2 in order to make a call to the class WSGIApplication() within it.
+In this call its sets a parameter to handle if the url is '/'. It defines the class for handling
+that parameter as MainPage and it is actually an instance of the RequestHandler class in webapp2.
+
+The get function in MainPage writes the html code stored in the variable form to the page
+users see when the visit my webapp. post() handles what to do with the inputs received from the form
+created by get().
+
+Validation
+-----------------------------------
+| 1. Verify user input            |
+| 2. On error, render form again  |
+| 3. Include error message        |
+-----------------------------------
+
+These steps apply mostly to my immediate programming situation with this practice session.
+
+
+#!/usr/bin/env python
+
+import webapp2
+
+form='''<form method="post">
+  What is your birthday?
+  <br>
+
+  <label> Month
+    <input type="text" name="month">
+  </label>
+
+  <label> Day
+    <input type="text" name="day">
+  <label>
+
+  <label> Year
+    <input type="text" name="year">
+  </label>
+
+  <br>
+  <br>
+  <input type="submit">
+  </form>
+'''
+
+class MainPage(webapp2.RequestHandler):
+    def get(self):
+        self.response.out.write(form)
+
+    def post(self):
+      user_month = valid_month(self.request.get('month'))
+      user_day = valid_day(self.request.get('day'))
+      user_year = valid_year(self.request.get('year'))
+
+      if not (user_month and user_day and user_year):
+        self.response.out.write(form)
+
+
+app = webapp2.WSGIApplication([('/', MainPage)], debug=True
+
+
+
+
+**************  String Substitution ***************
+
+String substitution allows you to have a single string and replace designated
+places in the string with different variables with the use of %s.
+
+
+Another chunk of instructor code.
+
+----------------------------------
+
+
+given_string = "I think %s is a perfectly normal thing to do in public."
+
+def sub1(s):
+  return given_string % s
+
+
+print sub1("running") 
+# => "I think running is a perfectly normal thing to do in public."
+
+print sub1("sleeping") 
+# => "I think sleeping is a perfectly normal thing to do in public."
+
+
+----------------------------------
+
+In this code I write a function that returns a standard message type string with
+the %s replaced with the variables passed into the function.
+
+For multiple values it is the same concept you just have to go in first-come
+first-serve kinda order.
+
+----------------------------------
+
+
+given_string = "I think %s, and despite your opinion, %s, are perfectly normal things to do in public."
+
+def sub1(s, d):
+  return given_string % (s, d)
+
+
+----------------------------------
+
+So basically string % (replacer1, replacer2)
+
+When doing multiple replacements multiple times you can use names and dictionaries to make things
+easier.
+
+
+----------------------------------
+
+
+given_string2 = "I'm %(nickname)s. My real name is %(name)s, but my friends call me %(nickname)s."
+
+def sub_m(name, nickname):
+    # sub_d = {'name': name,
+    #      'nickname': nickname}
+    return given_string2 % {"name": name,
+                 "nickname": nickname}
+
+
+print sub_m("Mike", "Goose")
+
+
+-----------------------------------
+
+I originally figured it out by creating a dictionary, sub_d, and assigning the values given to dictionary
+keys that matched the string substituters. After watching the way the instructor did it I realized i could
+declare the dictionary in the return statement
+
+
+************* HTML *******************
+
+input values
+
+<input type="text" value="<default>"
+
+        # <default> is the default value in the form. This is used
+        # when I want to put content in the text box upon page creation.
+
+***** Escaping HTML character *****
+
+" &quot;
+> &gt;
+< &lt;
+& &amp;
+
+
+
+def escape_html(s):
+    return cgi.escape(s, quote = True)
+
+This first bit of python code above it the escape_html function which calls to the cgi module
+and uses the function escape() instead of myself replace each character with its escaped version
+using the string.replace() method for each character I wanted to replace.
+
+
+ def write_form(self, error="", month="", day="", year=""):
+        self.response.out.write(form % {"error": error,
+                                        "month": verifiles.escape_html(month),
+                                        "day": verifiles.escape_html(day),
+                                        "year": verifiles.escape_html(year)})
+
+
+Above is code from main.py, the write_form function. It has been adjusted to escape any html
+characters so as to not break my html. Verifiles is the module I created to house all the
+validation functions rather than have them all in my main.py
+
+
+***** Redirect *****
+rather than post a message, redirect to page with message.
+
+Redirect:
+-make a "thanks" handler
+-add the /thanks url
+-redirect to the /thanks url
+
+So basically keep doing what we've been doing for the initial form and for invalid input cases, which
+is to use get() and post(). But now when the input passes the validation tests, I can redirect the
+user to a new url /thanks to send a success message on a page that can be refreshed without resending
+the form data.
+
+app = webapp2.WSGIApplication([('/', MainPage), ('/thanks', ThanksHandler)], debug=True)
+
+I modified app to include a case for the url '/thanks' and to send it to a new handler which I called
+ThankHandler. 
+
+In the class TestHandler, I defined its get() function for itself and get() prints out the success
+message but this time its going to be at a new url specifically for when someone puts a valid date
+in the form on the main page.
+
+class ThanksHandler(webapp2.RequestHandler):
+
+    def get(self):
+        self.response.out.write("Thanks! That day is righteously valid!")
+
+Next I modify post() in the MainPage handler to change the success case to redirect the user
+to /thanks. This is done using the self.redirect("") function that is built into the google
+app engine.
+
+def post(self):
+        user_month = self.request.get('month')
+        user_day = self.request.get('day')
+        user_year = self.request.get('year')
+
+        month = verifiles.valid_month(user_month)
+        day = verifiles.valid_day(user_day)
+        year = verifiles.valid_year(user_year)
+
+        if not (month and day and year):
+            self.write_form("This is not valid dood.", user_month, user_day, user_year)
+        else:
+            self.redirect("/thanks")
+
+After making these alterations I tested my page out and when I submitted invalid data, the form was reposted with and error message as was suposed to happen. Then when I put in valid data the app redirected me to the /thanks page. SUCCESS!!
+

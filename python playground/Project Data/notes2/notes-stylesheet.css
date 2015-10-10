@@ -1,0 +1,78 @@
+* {
+  -webkit-box-sizing: border-box;
+
+  box-sizing: border-box;
+}
+
+.encasing {
+	display: flex;
+	justify-content: center;
+	max-width: 50%;
+	margin: auto;
+
+}
+
+.toc-pane {
+	background-color: #666699;
+	border-radius: 20px;
+	padding: 10px;
+	margin: 10px;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+.toc-entry {
+	background-color: black;
+	border-radius: 20px;
+	padding: 10px;
+	color: white;
+}
+
+.toc-title {
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.lesson-pane {
+	background-color: #666699;
+	border-radius: 20px;
+	padding: 10px;
+	margin: 10px;
+	margin-left: auto;
+	margin-right: auto;
+
+
+}
+
+.lesson {
+	background-color: black;
+	border-radius: 20px;
+	padding: 10px;
+	margin-top: 10px;
+
+}
+
+h1 {
+
+}
+
+h3 {
+	font-size: 25px;
+	font-weight: bold;
+	color: white;
+	margin-top: 10px;
+}
+
+.concept {
+	padding: 10px;
+
+}
+
+.concept-title {
+	font-weight: bold;
+
+}
+
+.concept-description {
+
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>
+<form action="/login" method="post">
+    <tr><td>
+    <label>User Name:
+        <input type="text" name="user_name">
+    </label>
+    </td>
+    <br>
+    <td>
+    <label>Password:
+        <input type="password" name="user_password">
+    </label>
+    </td>
+        </tr>
+    <br>
+        <input type="submit" value="Login">
+    <hr>
+    <br>
+    <br>
+    </form>
+    </div>
+<div>
+    <form method="post">
+        <button>Create Account</button>
+    </form>
+
+    {% block create %}
+    {% endblock %}
+</div>
+</body>
+</html>

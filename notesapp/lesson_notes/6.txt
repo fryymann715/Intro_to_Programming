@@ -1,0 +1,11 @@
+LESSON: 6
+NAME: Functions
+TITLE: What a Function Is
+DESC: Functions are an essential building block to most programming.
+Functions are basically very small, typically single-purpose, programs that developers can create and use to perform procedures or methods without having to rewrite the code that the function contains, each time they use it.
+TITLE: Creating vs Using Functions
+DESC: Functions can both be created and used by programmers
+When creating a function, a programmer must first define what it is (name and procedure it will perform) and what it needs (input/arguments/operands). After defining what a function needs and what it does with what it is given, it can be callled upon to perform its task anytime needed so long it is given the proper input.
+TITLE: The Importance of Return Statements
+DESC: Input and procedures to perform are not enough for a function to be useful.
+As well as needing arguments to perform its task, a function also needs a return statement in order to make its work have any result and to make its existance worthwhile. A function can perform a procedure perfectly, but without a return statement to give the output of its work, it will never have an effect on what it was called upon do.

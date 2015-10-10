@@ -1,0 +1,24 @@
+Modulus Operator
+
+The modulus operator % basically asks for the remainder from the division of two numbers.
+
+15 % 12 results in 3 because 12 goes into 15 one time but leaves a difference of three betwwen
+the two numbers.
+
+4 % 3 = 1
+15 % 11 = 4
+25 % 4 = 1 
+
+The last one is because 4 goes into 25 six times, 24, leaving a remainder of 1.
+
+
+
+Dictionaries
+
+A dictionary is similar to a list and an array. A dictionary is created either in an assignment or
+using the dict() function.
+
+Dictionaries have two values per entry, a key and the value that key represents (key value pairs)
+and they can be affected by mutation.
+
+elements = {}

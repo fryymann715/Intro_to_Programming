@@ -1,0 +1,83 @@
+LESSON: 1
+NAME: The Basics
+TITLE: World Wide Web
+DESC: The World Wide Web is essentially a collection of HTML documents
+      which are connected to one another through hyperlinks.
+      The web functions basically with three main parts:<b><em> Browsers - The Internet - Servers</em></b>
+      <br>
+      Browsers are what people use to send requests to servers
+      via the internet, using a protocol called HTTP.
+TITLE: HTML: Hyper Text Markup Language
+DESC: <ol>
+        <li>Text content (plain content)</li> 
+        <li>Markup (used to change how content looks)</li>
+        <li>References to other documents (pictures, videos)</li>
+        <li>Links to other pages (hyper links)</li>
+      </ol>
+    <p>
+      <b>Text</b> is content in plain text.<br>
+      <b>Markup</b> is used to chage how the content looks.<br>
+      Markup is made of tags and they look like:
+      <br>
+      <b>&lt;tag></b><em> content </em><b>&lt;/tag></b>
+    </p>
+TITLE: HTML Attributes
+DESC: <div class="example-container">
+          <div class="tag-example">
+            <b>Anchor </b>
+            <br>
+            <span class="example">
+              &lt;a (used to create an anchor to another page?)
+              <br>
+               &lt;<b>a href</b>="www.udacity.com" > content &lt;/a>
+            </span>
+            <ul>
+              <li>a = the tag</li>
+              <li>href = the attribute</li>
+            </ul>
+          </div>
+          <div class="tag-example">
+            <b>Image</b>
+            <br>
+              <span class="example">
+               &lt;img> used to put images on a pages. Has multiple attributes.<br>
+               &lt;<b>img src</b>="url of image" <b>alt</b>="text to display when image is not found">
+              </span>
+            <ul>
+              <li>img = the tag</li>
+              <li>src = the attribute</li>
+              <li>alt = the attribute</li>
+            </ul>
+          </div>
+        </div>
+      <p style="clear: both;">
+        The image tag is also an example of a void tag, as it needs no cotent<br>
+        nor does it need a closing tag.<br>
+      </p>
+TITLE: White Space
+DESC: All extra spaces and gaps become a single space in HTML. Simply typing into multiple lines in HTML does not mean it will show up in multiple lines on the page. You have to use markup such as &lt;br> or &lt;p> to format the content to how you want it. 
+<p>
+      <b>&lt;br></b> is a void tag that ends a line and begins a new one.<br>
+      <b>&lt;p></b> is a tag that creates a paragraph like box around its content.
+    </p>
+
+TITLE: Inline vs. Block tags
+DESC: Inline tags affect a single line of code.<br> Block tags create an invisible box around content. 
+<div class="flex-container">
+      <div class="flex-item">
+        <b>Inline:</b>
+        <ul>
+          <li>&lt;b></li>
+          <li>&lt;img></li>
+          <li>&lt;em></li>
+          <li>&lt;span></li> 
+        </ul>
+      </div>
+      <div class="flex-item">
+        <b>Block:</b>
+        <ul>
+          <li>&lt;p></li>
+          <li>&lt;div></li>
+          <li>&lt;form></li>
+        </ul>
+      </div> </div>

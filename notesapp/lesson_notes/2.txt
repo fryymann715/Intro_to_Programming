@@ -1,0 +1,19 @@
+LESSON: 2
+NAME: Creating Structured Documents in HTML
+TITLE: Developer Tools
+DESC: There are several tools the developers use to create web pages and to, in a way, reverse engineer webpages as well. The Chrome browser has a built-in developer tool setup that allows one to view the source code of the webpage they are viewing.
+TITLE: The Tree-like Structure of HTML
+DESC: The tree-like structure of HTML works similar to a family tree, in the sense that one "box" can branch down into multiple boxes within a box.  <div class="image-container"> 
+        <img src="http://watershedcreative.com/naked/img/dom-tree.png" alt="woops, guess I forgot something..">
+    </div>
+TITLE: Boxes and Indenetation in HTML
+DESC: The "boxes" on a webpage that contain content coorelate to the indentation in the HTML document. The outermost "boxes" are to the far left, every "box" within another is indented to the right. The farther to the right code is indented, the deeper within the "box" it is.
+<br>
+This makes it easier to navigate your way through the HTML and find what is contained within what.
+TITLE: Text Editing Programs
+DESC: Developers also use text editing programs that are specialized for coding in various computer languages. These text editors colorcode certain elements and provide reference information for programming. Examples of such programs are:<br>
+      <ul style="list-style: circle;">
+        <li><a href="http://scratchpad.io/workable-knife-8969">Scratchpad.io</a></li>
+        <li><a href="http://codepen.io/">Codepen</a></li>
+        <li><a href="http://www.sublimetext.com/">Sublime</a></li>
+    </ul>

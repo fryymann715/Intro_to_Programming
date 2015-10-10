@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block lesson %}
+
+<div class="lesson">
+    <h1>Lesson: {{dgoods.lesson_number}}<br>
+        {{dgoods.lesson_name}}</h1>
+
+    <!-- Here I run a for loop for each concept in the list and the description content is flagged as safe
+     because I use some HTML formatting in my note files. -->
+    {% for concept in dgoods.concept_list %}
+
+    <div class="concept">
+        <h2>{{concept.title}}</h2>
+        <p>
+            {{concept.description | safe}}
+        </p>
+    </div>
+    {% endfor %}
+</div>
+{% if dgoods.is_user %}
+<div>
+    <form class="comment-form" action="/sign?lesson_number={{dgoods.lesson_number}}" method="post">
+      <div><textarea class="comment-box" name="content" rows="3" cols="60"></textarea></div>
+      <div><input type="submit" value="Post Note"></div>
+    </form>
+    <strong>Post your own personal notes for each lesson.</strong>
+    <hr>
+</div>
+{% endif %}
+{% if dgoods.posts %}
+   <b>Your notes for lesson {{dgoods.lesson_number}}:</b>
+    {% for post in dgoods.posts %}
+        <div><h3>{{post.author.date}}</h3>
+            <blockquote style="color: blue; font-style: italic; max-width: 1000px;">{{post.content}}</blockquote>
+        </div>
+    {% endfor %}
+{% endif %}
+
+{% endblock %}

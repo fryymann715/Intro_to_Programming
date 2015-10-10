@@ -1,0 +1,25 @@
+LESSON: 11
+NAME: HTML Forms
+TITLE: Form Tags
+DESC: A form in html is much like the &lt;div&gt; tag or &lt;p&gt; tag which have both an opening and a closing tag and it affects the content between the two. A form tag is used get various information from users and submit it to the webserver usually in the form of query parameters in the URL.
+TITLE: Form Elements
+DESC: Form tags themselves have various elements that can be used to further modify how the form is used. Some of the elements include:<br>
+<ul>
+	<li>input</li>
+	<li>label</li>
+	<li>select</li>
+</ul>
+TITLE: Input
+DESC: The input element adds a place for a user to submit a form of data and does not have a closing tag. These inputs have their own elements as well including: name, value, type. Name is used to assign a reference name to the data in the input, this is sometimes seen in the URL query parameters as: ?p=2. Here the input 'p' has a value of 1. Type is used to determine which type of input is available, this could be text, radio (radio button), checkbox, or submit.<br>
+&lt;input type="text" name="answer"&gt;
+TITLE: Checkboxes and Radio Buttons
+DESC: Checkboxes are an input type that will submit the value on or off. Users may select multiple chekboxes and submit them. Then there are radio buttons, and radio buttons differ from checkboxes in that a user can generally only select one radio button per form. This is handy when you want a user to select only one value from a selection of values.
+TITLE: Password Type
+DESC: Inputs also have a type called "password" and this creates a text box on the page that will show dots instead of the actual characters being typed in. However, when the data is sent, it is not sent securely and will be displayed in the URL if not handled correctly.
+TITLE: Select
+DESC: Select is similar to input in the sense that they both take data from users and send it to the server, but while input is generally taking text typed in by the user, select is providing an list of options for the user to choose from in the display of a dropmenu. Within the &lt;lselect&gt; tags, there are &lt;option&gt; tags and these option tags can have an assigned value (value="some value") or they will have the default value of whatever display name is between the opening and closing option tags.
+TITLE: Submitting Forms
+DESC: An html form may have an input with the type "submit". This will create a button that will send all the data placed into the inputs within the form. These other inputs may be multiple text boxes, radio buttons, or drop menus, or a variance of types.
+TITLE: The Action Attribute
+DESC: The action attribute is inserted in the opening form tag and its value is a url that you want the data being submitted from the form to be sent to. This is useful when sending data to a different path.<br>
+action="&lt; url &gt;&quot;

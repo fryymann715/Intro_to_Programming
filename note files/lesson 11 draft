@@ -1,0 +1,14 @@
+LESSON: 10
+NAME: Networks
+TITLE: Networks
+DESC: A network is a group of entities that can communicate, even though they are not directly connected. Meaning if there are three computers connect to one another, and A has to pass its message through B to get to C. Then that is considered a netork.
+TITLE: Latency and Bandwidth
+DESC: Latency is the time it takes or a message to get from its source, to its destination. Bandwidth is the amount of information that can be transmitted per unit of time. While latency is measured in simple miliseconds, bandwidtch is measured in bits per second, bps, which in most cases today it is megabits per second, or Mbps. These are the two ways that network 'speed' is measured.
+TITLE: Bits, Bytes, and Megaabytes
+DESC: A bit is the smallest unit of information. Its generally a yes or no answer, which in actuality is a 1 or a 0. Bits are pretty small 8 bits get grouped together to form 1 byte. A byte is a combination of patterns that the bits can form. 8 bits can make up 256 different patterns of 1 and 0 so a byte holds 256 patterns. However, a byte is still only large enough to store a single typed letter, such as 'a'. One thousand bytes are in one kilobyte, proceeding from there, one thousand kilobytes form one megabyte and the pattern repeats for gigabytes and terabytes.
+TITLE: Protocols
+DESC: A set of rules that people agree to that tell you how two entities can talk to eachother. Examples of such protocols are http, ftp, and tcp.
+TITLE: HTTP
+DESC: HTTP stands for hyper text transfer protocol, and it is the main protocol of the web. When one visits a webpage they are using HTTP to make requests to the servers that host the webpage and the server sends back the response via HTTP.<br>
+<br>
+client <code><-----></code> HTTP <code><-----></code> server<

@@ -1,0 +1,7 @@
+LESSON: 3
+NAME: Adding CSS style to HTML structure
+TITLE: Avoiding Repetition
+DESC: Avoiding repetition is crucial to programmers for multiple reasons.
+When repetition is not avoided, it can cause programmers to do the same thing over and over. Repeating the same style into multiple html elements rather than grouping them into CSS classes can greatly increase the chance of code errors. Consistency is important and its much easier to achieve consistant style when not repeating code over and over for each similar element. Instead, using CSS, we can apply consistent style to pages without repeating code.
+TITLE: Cascading Style Sheets
+DESC: CSS stands for Cascading Style Sheets. It is a language used to give style to html. Using classes, we declare an html element to be a css class and apply style to all elements that share the same class. Thus avoiding having to style each element individually.

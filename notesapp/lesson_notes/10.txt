@@ -1,0 +1,57 @@
+LESSON: 10
+NAME: Networks
+TITLE: Networks
+DESC: A network is a group of entities that can communicate, even though they are not directly connected. Meaning if there are three computers connect to one another, and A has to pass its message through B to get to C. Then that is considered a netork.
+TITLE: Latency and Bandwidth
+DESC: Latency is the time it takes or a message to get from its source, to its destination. Bandwidth is the amount of information that can be transmitted per unit of time. While latency is measured in simple miliseconds, bandwidtch is measured in bits per second, bps, which in most cases today it is megabits per second, or Mbps. These are the two ways that network 'speed' is measured.
+TITLE: Bits, Bytes, and Megaabytes
+DESC: A bit is the smallest unit of information. Its generally a yes or no answer, which in actuality is a 1 or a 0. Bits are pretty small 8 bits get grouped together to form 1 byte. A byte is a combination of patterns that the bits can form. 8 bits can make up 256 different patterns of 1 and 0 so a byte holds 256 patterns. However, a byte is still only large enough to store a single typed letter, such as 'a'. One thousand bytes are in one kilobyte, proceeding from there, one thousand kilobytes form one megabyte and the pattern repeats for gigabytes and terabytes.
+TITLE: Protocols
+DESC: A set of rules that people agree to that tell you how two entities can talk to eachother. Examples of such protocols are http, ftp, and tcp.
+TITLE: URLS
+DESC: URL stands for Uniform Resource Locator, and they are used to navigate throught networks. A URL typically has a protocol specified, followed by the host name (which can be an ip address or computer/server name), followed by the path (the actual document we want to get from the host).<br>
+<hr>
+http://www.udacity.com/<br>
+The example above has these three things, its protocol is specified: http://, the host name is given: www.udacity.com, and the path is given as well: /. In many cases the path is longer and contains the location of the file you are trying to view, but it is usually just / when first reaching a website.<br>
+<hr>
+URLs can also have what are called Query Parameters, sometimes called GET Parameters.<br>c
+http://example.com/foo?p=1&n=3<br>
+Here we have path /foo accompanied with  two query parameters, p and n. This is saying that a parameter named 'p' has the value of 1, and a parameter named 'n' has the value of 3. The ? in URL signifies that query parameters are present and they are each separated by &.<br>
+<br>
+Also, a URL could have a port specified. The default port for http is 80 but sometimes you will want to use a different port, in this case you would specify that port between the host name and the path.<br>
+http://example.com:4000/<br>
+TITLE: HTTP
+DESC: HTTP stands for hyper text transfer protocol, and it is the main protocol of the web. When one visits a webpage they are using HTTP to make requests to the servers that host the webpage and the server sends back the response via HTTP.<br>
+<hr>
+client &lt;-----&gt; HTTP &lt;-----&gt; server
+TITLE: HTTP Requests
+DESC: The URL is translated into a request line which has three main parts: method, path, version.<br>
+The method is the type of request being made to the server, which is most comonly the methods GET and POST. The path is the path in the URL and this is the document that the user is trying to retrieve. Last comes the version, which is HTTP/ followed by the version being used (typically 1.1).<br>
+The host name is absent from the request line because the user is already connected to the host and the request line is actually being sent to that host.<br>
+<br>
+When a request is made, the request line is sent out, followed by a number of 'headers'. Headers are formatted as such: Name: Value. 
+<br>
+There are lots of headers that get used by most commonly there are:<br>
+<ul>
+	<li>Host: The host name in the URL and is required in HTTP 1.1. Webservers may have multiple names so this is specified.</li>
+	<li>User-Agent: Describes what is making the request, typically the type of browser being used.</li>
+</ul>
+TITLE: HTTP Responses
+DESC: Once a user sends a request, the response from the server follows. It is pretty similar to requests and looks like this: HTTP/1.1 200 OK<br>
+This is the status line, the version matches up with the version in the request line, the status code is next followed by the reason phrase, which is an english description of the status code. There are several status codes, here are some common examples:<br>
+<ul>
+	<li>200 OK - Document is found and everything is good.</li>
+	<li>302 Found - Document is located somewhere else.</li>
+	<li>404 Not Found - Document can not be found.</li>
+	<li>500 Server Error - Server broke trying to process request.</li>
+</ul>
+<hr>
+There are also headers in http responses as well.<br>
+<ul>
+	<li>Date: Tue Mar 23, 2001 - Always present, time of request.</li>
+	<li>Server: Apache /2.2.3 - Not always present</li>
+	<li>Content-Type: text/html - Often used, determines the type of content.</li>
+	<li>Conent-Length: 1539 - Often used but not required. How long the document is.</li>
+</ul>
+TITLE: Servers
+DESC: Servers respond to HTTP requests and there are two main types of requests a server will make a response to, static or dynamic. Static is a pre-written file, such as a simple html file or an image. Dynamic requests give responses that are built by-demand by a program that is running, these are known as web applications.

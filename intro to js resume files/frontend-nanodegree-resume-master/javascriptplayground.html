@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Java Script Play Page</title>
+		<link href="jsplayground-styles.css" rel="stylesheet" type="text/css">
+
+		
+	</head>
+
+	<h1 id="t-head" class="top-header">Java Play Page</h1>
+
+	<body>
+		<div>
+			<label class="page-label">Change header color:</label>
+
+			<table class="cbutton-menu">
+				<tr>
+					<td class="c-button" onclick="myFunction(1)">White</td>
+					<td class="c-button" onclick="myFunction(2)">Red</td>
+					<td class="c-button" onclick="myFunction(3)">Black</td>
+				</tr>
+				<tr>
+					<td class="c-button" onclick="myFunction(0)">Reset</td>
+				</tr>
+			</table>
+		</div>
+		<br>
+		<div class="button-holder">
+			<span class="alert-button"><button onclick="myAlert()">Alert Me!</button></span>
+		</div>
+		<br>
+		<div>
+			<form>
+				<input type="text" id="palindrome-check">
+				<button onclick="palindromeCheck()">Check if Palindrome</button>
+			</form>
+		</div>
+		<span>You must first answer this question!</span>
+		<button onclick="askForName()">Ask away</button>
+		<hr>
+		<div id="whodisis" class="whothisbe">
+
+		</div>
+
+		
+		<script>
+
+		function askForName() {
+			var x;
+			var person = prompt("What is your name?", "Batman");
+
+			if ( person != null ) {
+				x = "Well herro der " + person + ".<br>"
+				"You may now continue.";
+				document.getElementById("whodisis").innerHTML = x;
+			}
+		}
+
+		function palindromeCheck(text) {
+			var revstr = "";
+			var str = document.getElementById("palindrome-check").value;
+			var l = str.length;
+
+			for (var j = l; j >= 0; j--) {
+				revstr = revstr + str.charAt(j);
+			}
+
+			if (str == "") {
+				alert("Blank entries not allowed yo!")
+			}
+			else if (revstr == str) {
+				alert("Totally a palindrome dude!")
+			}
+			else {
+				alert("Palindrome it is not, dude.")
+			}
+
+
+		}
+
+
+		function myFunction(colorcode) {
+			if ( colorcode == 1 ){
+			document.getElementById("t-head").style.color = "white";
+			}
+
+			if ( colorcode == 2  ) {
+				document.getElementById("t-head").style.color = "red";
+			}
+
+			if ( colorcode == 3 ) {
+				document.getElementById("t-head").style.color = "black";
+			}
+
+			if ( colorcode == 0) {
+				document.getElementById("t-head").style.color = "#194775";
+			}
+		}
+
+		function myAlert() {
+			alert("This is my test of using alert boxes.")
+		}
+
+
+		</script>
+
+	
+
+
+
+	</body>
+
+
+</html>

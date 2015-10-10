@@ -1,0 +1,82 @@
+
+This the code from the lesson before we get into HTML templates. In this program, ran on the google app engine, 
+The instructor created the class Handler which extends the webapp2.RequetHandler class to have the function
+write() simply so save the hassle of having to type out self.response.out.write() every time.
+
+Then the MainHandler extends the Handler class.
+
+Here we are making a web app that prints a form on the main page with the header, Add Food, followed
+by a text box then an 'Add' button. What the program does is takes the input from the user and puts it into
+a list that is added to the bottom of the page and updated with each entry the user submits as well
+as keeping the previous entries in the list.
+
+
+In order to prevent the %s from showing up in the HTML the string needs to be substitued with values before hand since %s is Python thing and not in HTML.
+
+
+import webapp2
+
+form_html = """                     # This is the basic form html with the input named "food"
+<form>
+<h2>Add Food</h2>
+<input type="text" name="food">
+%s                                  # The %s here is replaced with the hidden_html string to keep the previous
+<button>Add</button>                # values stored but hidden from the users on the front end.
+</form>
+"""
+
+item_html = "<li>%s</li>"           # This is the 'template' for adding items to the shopping_list_html. 
+
+hidden_html = """
+<input type="hidden" name="food" value="%s">    # This is the template for the hidden input value that is 
+"""                                             # substituted into the form_html.
+
+shopping_list_html = """            # This is the html template for the shopping list that is added to the 
+<br>                                # end of the form_html that is printed to the page. This list is updated
+<br>                                # to contain all of the "food" values from the user input and the hidden
+<h2>Shopping List</h2>              # inputs. The %s is substituted for the item_html in the for loop below.
+<ul>
+%s
+</ul>
+"""
+
+
+class Handler(webapp2.RequestHandler):              # Handler class to make writing to the page a little easier.
+    def write(self, *a, **kw):
+        self.response.out.write(*a, **kw)
+
+
+class MainHandler(Handler):
+    def get(self):
+        output = form_html                      # creates output from form_html and a blank output_hidden
+        output_hidden = ""
+
+        items = self.request.get_all("food")        # This creates a list of all the "food" values.
+        if items:                                   # Put inside if statement so if the items list doesnt build
+            output_items = ""                       # the program will return None.
+            for item in items:
+                output_hidden += hidden_html % item      
+                output_items += item_html % item
+
+            output_shopping = shopping_list_html % output_items
+            output += output_shopping
+
+        output = output % output_hidden
+
+        self.write(output)
+
+app = webapp2.WSGIApplication([
+    ('/', MainHandler)
+], debug=True)
+
+
+Too much to type in comment tags... But inside the for items in items loop, output_hidden is concatenated with the hidden_html template with current "food" item substituted into the string. Then output_items, which was delcared an empty string, is concatenated with its current self and the "food" value. 
+
+Once the for loop is done, the string output_shopping is created from the shopping_list_html string with the output_items list from the loop, which is the list of item_html strings with the values substituted in, substituted into it. 
+
+Then the output string declared at the beging of MainHandler is concatenated with the output_shopping string which has the shopping_list_html all substituted and ready for printing.
+
+Outside the if statement and before the final write() is called, the %s in output is substituted with the output_hidden string which is the hidden_html string with it's %s substituted with all the previous values from
+the "food" inputs.
+
+Output is then printed to the page.

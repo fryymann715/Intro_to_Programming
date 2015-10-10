@@ -1,0 +1,27 @@
+LESSON: 14
+NAME: HTML Templates
+TITLE: Templates
+DESC: HTML templates are a way for programs to look to an html file to automatically generate complicated strings rather than hardcoding all the html into the program itself. This keeps your HTML sepaarate from whatever other code you are working with, which in turn allows you to find and modify the html of your page easily and without interfering with your program's code and it increases your effeciency as a programmer because you no longer have code out multiple full pages of html.
+TITLE: Using HTML Templates
+DESC: In order to use HTML templates you must first import a template library, such as Django and Jinja. And after making the adjustments to your appengine app.yaml file or any other similar files you might be using, you initialize the library. In this case we use jinja2, and we initialize it with the code:<br>
+<br>
+jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_directory2), autoescape=True)<br>
+<br>
+This creates an object that you can use to call to your templates and have them rendered to the browser. Variables can be passed to the environment as well and allows the code inserted into the html using {{}} or {% %} tags in the template.
+TITLE: Template Inhertiance
+DESC: Templates can also inherit from each other much like classes do. <br>
+<hr>
+{% block lesson %}<br>
+<br>
+{% endblock %}<br>
+<hr>
+Using tags like the one above in the html template you wish to be inherited, you can designate where in the
+base html file the template will go. <br>
+<hr>
+{% extends /"base.html/" %}<br>
+{% block lesson %}<br>
+{% endblock %}<br>
+<hr>
+The above code shows that this html file inherits the html from the file base.html, and the code put between the {% block %} tags will be inserted into the respective blocks appropriated for them in the base template. This immensly cuts down on the code I would have had to write for numerously repeated lines of code.
+TITLE: Code in Templates
+DESC: In the section above I used {% %} tags. These are used to perform logic within the html template, logic such as {% if %} or {% for %}. All these tags work in a similar way that html does, in the sense that each tag needs a closing tag. These closing tags use the same syntax and are usually one-word commands like {% endblock %} or {% endif %}. So like for my drop menu entries I ran a {% for %} loop in my template to generate the html code for each item in a list I passed to it. This keeps me from having to repeate code over and over for each entry. This saves me time and increases the efficieny of my webapp.

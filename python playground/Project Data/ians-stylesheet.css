@@ -1,0 +1,138 @@
+
+/* styling of the box around the table of contents */
+
+.TOC {
+  background-color: #666699;
+  border-radius: 20px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right:auto;
+  margin-bottom: 10px;
+  max-width: 75%;
+}
+
+.toc-contents {
+  background-color: #E0F0FF;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 15px;
+}
+h1 {
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  text-decoration: underline;
+}
+
+body {
+  background-color: #E6E6E6;
+  font-family: Helvetica;
+  padding: 20px 10px;
+  max-width: 2000px;
+  margin: 0 auto;
+}
+/* unvisited link */
+a:link {
+  color: black;
+  font-weight: bold;
+}
+/* visited link */
+a:visited {
+  color: black;
+}
+/* hover over link */
+a:hover {
+  color: #666699;
+}
+
+p {
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.lesson {
+  background-color: #666699;
+  border-radius: 20px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  max-width: 75%;
+}
+
+.concept {
+  background-color: #E0F0FF;
+  border-radius: 10px;
+  padding: 1px;
+  margin: 15px;
+  
+}
+
+.concept-title {
+  font-size: 1.6em;
+  margin: 8px;
+  font-weight: bold;
+  text-align: center;
+  color: #29527A;
+}
+
+.concept-desc {
+  color: green;
+  font:  italic 12px/12px times-new-roman;
+  margin-left: auto;
+  margin-right: auto;
+  display: table;  
+  width: 50%;
+  text-align: center;
+}
+
+.example-attr {
+  margin: auto;
+  display: table;
+  font-weight: bold;
+  color: blue;
+  padding-bottom: 0;
+  
+}
+
+.tag-example {
+  margin: 2px;
+  padding: 2px;
+  float: left;
+}
+
+.example {
+  font-size: 12px;
+  margin: 1px;
+}
+
+.example-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.example-list {
+  width: 100px;
+  margin: auto;
+}
+/* Class used to align smaller content side by side */
+.flex-container {
+  border-radius: 20px;
+  padding: 2px;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+}
+
+.flex-item {
+  padding: 1px;
+  margin: 1px;
+}
+
+.image-container {
+  display: flex;
+  margin: auto;
+  padding: 10px;
+  max-width: 90%;
+  justify-content: center;
+}

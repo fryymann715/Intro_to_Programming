@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+    <!-- <link href="/stylesheets/stylesheet.css" rel="stylesheet" type="text/css"> -->
+    <title>Guestbook Test</title>
+</head>
+<body>
+<h1> Testing the Guestbook Datatstore Code: </h1>
+{% if user['is_user'] %}
+  <form class="comment-form" action="/sign?lesson_number={{lesson_number}}" method="post">
+    <div><textarea class="comment-box" name="content" rows="3" cols="60"></textarea></div>
+     <div><input type="submit" value="Post Comment"></div>
+  </form>
+{% endif %}
+  <hr>
+
+    <form action="/switch_lesson">
+        <tr><td><button name="lesson_number" value="1">Lesson One</button></td></tr>
+        <tr><td><button name="lesson_number" value="2">Lesson 2</button></td></tr>
+        <tr><td><button name="lesson_number" value="3">Lesson 3</button></td></tr>
+        <tr><td><button name="lesson_number" value="4">Lesson 4</button></td></tr>
+
+    </form>
+
+  <br>
+  Current Lesson: <strong>{{lesson_number}}</strong><br>
+    <br>
+    {% if user %}
+    Current User:<strong>{{user['user_name']}}</strong><br>
+    <a style="font-weight: bold; visited: black;" href="{{user['url']}}">{{user['url_linktext']}}</a>
+    {% endif %}
+
+  <!-- user comments start here -->
+  {% block posts %}
+  {% endblock %}
+</body>
+</html>

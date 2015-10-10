@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="/stylesheets/note-style.css" rel="stylesheet" type="text/css">
+        <title>Ian's Notes</title>
+    </head>
+    <body>
+        <h1>Udacity:IPND - Ian Deans</h1>
+        <div>
+            Current User:<strong>{{dgoods.user_name}}</strong><br>
+            <a style="font-weight: bold; visited: black;" href="{{dgoods.user_url}}">{{dgoods.user_linktext}}</a>
+        </div>
+        <br>
+        
+        {% if dgoods.lesson_list %}
+        <form action="/lesson">
+            <label>Select a lesson to view:
+                <select name="lesson_input">
+                    <option value="0">- Select Lesson -</option>
+                    {% for lesson in dgoods.lesson_list %}
+                        <option value="{{lesson['number']}}">Lesson {{lesson['number']}}: {{lesson['name']}}</option>
+                    {% endfor %}
+                </select>
+                <button>Enter</button>
+            </label>
+        </form>
+        {% endif %}
+        <hr>
+
+        <script type="test/javascript">
+            var awesomeThoughts = "Yo soy awesomo!";
+            var funThoughts = awesomeThoughts.replace("awesomo", "fun");
+            console.log(awesomeThoughts);
+            console.log(funThoughts);
+        </script>
+
+        {% block error %}
+        {% endblock %}
+
+        {% block lesson %}
+        {% endblock %}
+        <hr>
+        <p class="footer">
+            Intro to Programming Nanodegree Notes Webapp.
+        </p>
+    </body>
+
+</html>
