@@ -62,7 +62,7 @@ DESC: All extra spaces and gaps become a single space in HTML. Simply typing int
     </p>
 
 TITLE: Inline vs. Block tags
-DESC: Inline tags affect a single line of code.<br> Block tags create an invisible box around content. 
+DESC: Inline tags affect a single line of code. While block tags create an invisible box around content.
 <div class="flex-container">
       <div class="flex-item">
         <b>Inline:</b>
@@ -80,4 +80,6 @@ DESC: Inline tags affect a single line of code.<br> Block tags create an invisib
           <li>&lt;div></li>
           <li>&lt;form></li>
         </ul>
-      </div> </div>
+      </div>
+  </div>
+</div>

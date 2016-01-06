@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="/stylesheets/framework-practice.css" rel="stylesheet" type="text/css">
+        <title>
+            HomePage App
+        </title>
+    </head>
+
+    <body>
+
+        <script src="/javascript/appjscript.js" type="text/javascript"></script>
+
+        <div class="grid">
+            <div class="row">
+                <div class="col-6">
+                    <h1 class="main-header">HomePage App</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-2">
+                    <div class="link-table">
+                        <table>
+                            <tr><td onclick="openPage(0)" class="tlink">Notes Web App</td></tr>
+                            <tr><td onclick="openPage(1)" class="tlink">Google</td></tr>
+                            <tr><td onclick="openPage(2)" class="tlink">Udacity</td></tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="link-table">
+                        <table>
+                            <tr><td onclick="openPage(3)" class="tlink">HotSchedules</td></tr>
+                            <tr><td onclick="openPage(4)" class="tlink">Second Page</td></tr>
+                            <tr><td onclick="openPage(5)" class="tlink">Home</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-10">
+                    <div class="test-p">
+                        {% block second %}
+                        <p>
+                            I just need to take up a lot<br>
+                            of space.<br>
+                            So<br>
+                            that<br>
+                            the<br>
+                            is<br>
+                            scrollable<br>
+                            so<br>
+                            that<br>
+                            i<br>
+                            may<br>
+                            check<br>
+                            the<br>
+                            affects<br>
+                            of<br>
+                            my<br>
+                            css<br>
+                            styling<br>
+                            attempts.<br>
+                        </p>
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+
+        <div id="footer">
+
+        </div>
+            </div>
+
+    </body>
+
+</html>

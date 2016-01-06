@@ -1,40 +1,50 @@
 {% extends "base.html" %}
-
 {% block lesson %}
-
-<div class="lesson">
-    <h1>Lesson: {{dgoods.lesson_number}}<br>
-        {{dgoods.lesson_name}}</h1>
-
-    <!-- Here I run a for loop for each concept in the list and the description content is flagged as safe
-     because I use some HTML formatting in my note files. -->
-    {% for concept in dgoods.concept_list %}
-
-    <div class="concept">
-        <h2>{{concept.title}}</h2>
-        <p>
-            {{concept.description | safe}}
-        </p>
+    <div id="lesson-header" class="row">
+        <h3 id="lesson-title">Lesson: {{dgoods.lesson_number}}<br>
+            {{dgoods.lesson_name}}</h3>
     </div>
-    {% endfor %}
-</div>
-{% if dgoods.is_user %}
-<div>
-    <form class="comment-form" action="/sign?lesson_number={{dgoods.lesson_number}}" method="post">
-      <div><textarea class="comment-box" name="content" rows="3" cols="60"></textarea></div>
-      <div><input type="submit" value="Post Note"></div>
-    </form>
-    <strong>Post your own personal notes for each lesson.</strong>
-    <hr>
-</div>
-{% endif %}
-{% if dgoods.posts %}
-   <b>Your notes for lesson {{dgoods.lesson_number}}:</b>
-    {% for post in dgoods.posts %}
-        <div><h3>{{post.author.date}}</h3>
-            <blockquote style="color: blue; font-style: italic; max-width: 1000px;">{{post.content}}</blockquote>
-        </div>
-    {% endfor %}
-{% endif %}
+        <!-- Here I run a for loop for each concept in the list and the description content is flagged as safe
+         because I use some HTML formatting in my note files. -->
+<div id="content-view" class="row">
+    <div id="concept-view">
 
+        <h4 id="current-concept-title"></h4>
+        <div id="current-desc">
+            <p id="current-concept">
+            </p>
+        </div>
+    </div>
+<div id="concept-list" class="row">
+        {% for concept in dgoods.concept_list %}
+            <section class="concept-block" id="c{{concept.concept_id}}" onclick="openDesc('c{{concept.concept_id}}')">
+                <header class="concept-header"><h4>{{concept.title}}</h4></header>
+                <main class="concept-main" id="c{{concept_id}}" style="display: none;">
+                        {{concept.description | safe}}
+                </main>
+            </section>
+        {% endfor %}
+    </div>
+    </div>
+{% if dgoods.is_user %}
+    <div id="post-row" class="row">
+        <div id="add-post-div">
+            <form id="post-form" action="/sign?lesson_number={{dgoods.lesson_number}}" method="post">
+             <textarea id="add-post-box" name="content" rows="3" cols="40" style="max-width: 90%;"></textarea>
+             <input type="submit" value="Post">
+            </form>
+            <span>Post your own personal notes for each lesson.</span>
+        </div>
+        {% if dgoods.posts %}
+            <div id="post-box">
+               <b>Your notes for lesson {{dgoods.lesson_number}}:</b>
+                {% for post in dgoods.posts %}
+                    <div class="post">
+                        <blockquote class="post-block">{{post.content}}</blockquote>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+{% endif %}
 {% endblock %}

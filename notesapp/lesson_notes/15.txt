@@ -1,0 +1,39 @@
+Lesson: 15
+NAME: My own exploration
+TITLE: Responsive Design
+DESC: On my own I decided to look into two concepts, responsive design and javascript. I delved deeper into responsive
+design through Udacity courses, first the 'Intro to HTML and CSS' just to get a better hold on basic web development,
+but I spent most of time on the 'Responsive Web Design Fundamentals' course with instructors Cameron Pittman and Pete
+Lepage. In this course I learned about the needs for responsive designs with the rise of mobile and other hand held
+devices. I learned how to establish a basic CSS framework for myself and how to use media queries to adjust my layouts
+based on the screen that my webapp is being viewed on. The instructors also showed me several commonly used responsive
+layouts that I could use or base my own layouts on. I became more familiar with flex-boxes during this course and became
+more proficient with basic CSS in general. With what I learned from the courses and my internet searching I created a
+layout for my page that responds to the size of the screen it is being viewed on. I started with the smallest size and
+worked my way up, adding breakpoints where I felt the page needed to adjust to better take advantage of the space
+available. I kept my touch buttons at a min of 48px as suggested to make it easy for users to navigate the page, and I
+used flex-boxes to make sure my content flowed and adjusted accordingly.<br>
+<br>
+    I also did a lot of searching on the internet for information on how to achieve certain effects.
+Stackoverflow has been extremely useful as a reference for me, as well as w3schools.com. Both sites I have used
+extensively during my time with Udacity. w3schools.com is a great reference tool with lots of examplesand tutorials on
+all kinds of web development. Stackoverflow is a Q&A site where developers ask specific, situational questions and
+other programmers respond with either direct answers or advice and a lot of times, example code on how to achieve the
+desired results.<br>
+<br>
+<a href="http://stackoverflow.com">Stack Overflow</a><br>
+<a href="http://www.w3schools.com">W3Schools</a>
+
+TITLE: Javascript
+DESC: I started looking into javascript first, as it has long been a language I've been interested in, however I ended
+up spending more of time on learning responsive design. I did still learn a little bit about Javascript through the
+Udacity course 'Javascript Basics' with Cameron Pittman and James Williams. I followed through the course until I hit
+a snag with JQuery. I wasn't able to get the JQuery library to work for me yet, and rather than spend the time to get
+it figured out and working I drifted towards the responsive design. I did still learn quite a bit about the capabilities
+of Javascript, I practiced writing my own scripts using GreaseMonkey in my FireFox browser on various pages and then
+made my own javascript function. This function, when a concept in the list is clicked on, would grab the title and
+description of the concept and post it to the content viewer div. Giving my page a bit of interactiveness and a tidier
+look.<br>
+<br>
+<a href="http://stackoverflow.com">Stack Overflow</a><br>
+<a href="http://www.w3schools.com">W3Schools</a>

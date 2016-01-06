@@ -1,0 +1,8 @@
+Javascript
+
+Javascript is the main tool for creating interactive content in webpages/webapps and has been for roughly two decades. Javascript
+
+
+Responsive Web Design
+
+The next concept I looked into on my own was responsive design. I originally wanted to look more into javascript and in fact did at first, but I ended up spending more time making my page repsonsive. I started with Udacity's course, 'Responsive Web Design Fundamentals' with instructors Pete Lepage and Cameron Pittman. In the course, the reasons for a responsive design are explained and examples are shown as to why responsive design is such a major part of web development today. With the rise of mobile and other handheld devices, webpages can no longer have a single page design. Sites deisgned for a desktop computer will not fit on the screen of a small device without the user having to pinch and zoom or scroll all over the place just to see the content. In the course, I learned how to set breakpoints to determine when the page layout would adjust. I also learned how to use the responsive design mode in dev tools in order to test out my page on different resolutions. This allowed me to start with a small screen, and work my way out from there, expanding the width of the viewport to see how it affected my page. Using these tools I was able to determine at which width in pixels my layout should adjust and make the changes accordingly. The instructors also gave me some tips for when I am deisgning my mobile layout, such as keeping touch buttons at a min width of 48px to make it easier for users to click or tap on content without them accidentally selecting unwanted content.

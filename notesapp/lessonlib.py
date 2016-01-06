@@ -54,7 +54,7 @@ def get_desc(concept):
 
 
 # loops through all the concepts and fills a list containing all the concepts' info
-def fill_concepts(text, number_of_concepts):
+def fill_concepts(text, number_of_concepts, lesson_number):
     counter = 0
     concept_list = []
     while counter < number_of_concepts:
@@ -64,6 +64,7 @@ def fill_concepts(text, number_of_concepts):
         raw_concept = text[this_concept_start:this_concept_end]
         concept['title'] = get_title(raw_concept)
         concept['description'] = get_desc(raw_concept)
+        concept['concept_id'] = str(lesson_number) + '-' + str(counter)
         concept_list.append(concept)
         text = text[this_concept_end:]
         counter += 1
@@ -88,14 +89,15 @@ def build_lesson_table(lesson_number):
     lesson_table = notedb.Lesson_Note(parent=notedb.lesson_dir(lesson_number))
 
     lesson_table.name = lesson.name
-    concept_id = 1
+    concept_dbid = 1
     for concept in lesson.concepts:
         concept_table = notedb.Concept(parent=notedb.lesson_db(lesson_number))
+        concept_table.concept_id = concept['concept_id']
         concept_table.title = concept['title']
         concept_table.description = concept['description']
-        concept_table.id_number = concept_id
+        concept_table.id_number = concept_dbid
         concept_table.put()
-        concept_id += 1
+        concept_dbid += 1
     lesson_table.concepts = notedb.lesson_db(lesson_number)
     lesson_table.put()
 

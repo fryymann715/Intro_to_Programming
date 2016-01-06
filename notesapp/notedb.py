@@ -18,6 +18,7 @@ def lesson_db(lesson_number=DEFAULT_LESSON):
 class Concept(ndb.Model):
     title = ndb.StringProperty(indexed=False)
     description = ndb.StringProperty(indexed=False)
+    concept_id = ndb.StringProperty(indexed=False)
     id_number= ndb.IntegerProperty(indexed=True)
 
 

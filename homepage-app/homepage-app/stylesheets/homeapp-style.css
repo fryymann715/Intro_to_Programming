@@ -1,0 +1,75 @@
+
+#hidestuff {
+    background-color:   #006B6B;
+    z-index: 4;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index:    3;
+    height: 120px;
+    width: 100%;
+}
+
+.header-div {
+    background: url("http://i1030.photobucket.com/albums/y365/ideans715/header-napalm-explosions_zpsyog7coae.jpg?t=1444678319");
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    z-index: 4;
+    border-radius: 20px;
+    border-style: inset;
+    min-width:   300px;
+    max-width:  600px;
+    text-align: center;
+}
+
+.main-header {
+    color:  #FFFFFF;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+}
+
+#footer {
+    background-color: #006B6B;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    z-index:    3;
+    height: 25px;
+    width: 100%;
+}
+
+.link-table {
+    background-color:   #B2D3D3;
+    position: fixed;
+    left: 10px;
+    top: 120px;
+    z-index: 4;
+    display: flex;
+    justify-content: flex-start;
+    border-style: inset;
+    width: 150px;
+    height: 150px;
+
+}
+
+.tlink {
+    margin: auto;
+}
+
+.tlink:hover {
+    cursor: crosshair;
+    font-style: italic;
+}
+
+body {
+    background-color: #006B6B;
+}
+
+.test-p {
+    position: absolute;
+    left: 300px;
+    top: 200px;
+    z-index: 2;
+}

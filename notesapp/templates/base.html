@@ -2,48 +2,58 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <link href="/stylesheets/note-style.css" rel="stylesheet" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/stylesheets/layout4.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="/javascript/responsivescript.js"></script>
         <title>Ian's Notes</title>
     </head>
     <body>
-        <h1>Udacity:IPND - Ian Deans</h1>
-        <div>
-            Current User:<strong>{{dgoods.user_name}}</strong><br>
-            <a style="font-weight: bold; visited: black;" href="{{dgoods.user_url}}">{{dgoods.user_linktext}}</a>
+    <div class="page">
+
+        <div id="header" class="row">
+            <h2 id="page-title">IPND: Ian Deans</h2>
+
+            <div id="user-login">
+                        Current User:<br><strong>{{dgoods.user_name}}</strong><br>
+                        <a href="{{dgoods.user_url}}">{{dgoods.user_linktext}}</a>
+                    </div>
+
         </div>
-        <br>
-        
-        {% if dgoods.lesson_list %}
-        <form action="/lesson">
-            <label>Select a lesson to view:
-                <select name="lesson_input">
-                    <option value="0">- Select Lesson -</option>
-                    {% for lesson in dgoods.lesson_list %}
-                        <option value="{{lesson['number']}}">Lesson {{lesson['number']}}: {{lesson['name']}}</option>
-                    {% endfor %}
-                </select>
-                <button>Enter</button>
-            </label>
-        </form>
-        {% endif %}
-        <hr>
 
-        <script type="test/javascript">
-            var awesomeThoughts = "Yo soy awesomo!";
-            var funThoughts = awesomeThoughts.replace("awesomo", "fun");
-            console.log(awesomeThoughts);
-            console.log(funThoughts);
-        </script>
+        <div id ="lesson-select" class="row">
+            {% if dgoods.lesson_list %}
+            <form id="lesson-select-form" action="/lesson">
+                <label>
+                    <select name="lesson_input" id="lesson-select-menu" onchange="this.form.submit()" style="max-width: 85%;">
+                        <option value="0">- Select Lesson -</option>
+                        {% for lesson in dgoods.lesson_list %}
+                            <option value="{{lesson['number']}}">Lesson {{lesson['number']}}: {{lesson['name']}}</option>
+                        {% endfor %}
+                    </select>
+                </label>
+            </form>
 
-        {% block error %}
-        {% endblock %}
+            {% endif %}
+        </div>
 
-        {% block lesson %}
-        {% endblock %}
-        <hr>
-        <p class="footer">
-            Intro to Programming Nanodegree Notes Webapp.
-        </p>
+        <div id="content" class="row">
+
+            {% block lesson %}
+            {% endblock %}
+            {% block error %}
+            {% endblock %}
+
+        </div>
+
+        <div id="footer" class="row">
+
+            <h4>Ian Deans: Intro to Programming Nanodegree</h4>
+
+        </div>
+    </div>
+
+
+
     </body>
 
 </html>

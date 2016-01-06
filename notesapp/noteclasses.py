@@ -15,7 +15,9 @@ class Lesson:
 
         lesson_text = lessonlib.get_lesson_text(lesson_number)
         self.name = lessonlib.get_lesson_name(lesson_text)
-        self.concepts = lessonlib.fill_concepts(lesson_text, lessonlib.get_num_of_concepts(lesson_text))
+        self.concepts = lessonlib.fill_concepts(lesson_text, lessonlib.get_num_of_concepts(lesson_text), str(lesson_number))
+
+
 
 
 # This is the class that holds all the 'goods' in one object to make

@@ -1,0 +1,162 @@
+/* Stylesheet v.4 */
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    padding: .5em;
+    background-color: lightblue;
+}
+
+#user-login {
+    font-size: 60%;
+}
+
+#lesson-header{
+    display: flex;
+    justify-content: center;
+
+}
+
+#content-view {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+
+#current-desc {
+    display: flex;
+    justify-content: space-around;
+}
+
+#concept-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex: 0;
+    align-content: flex-start;
+    order: 2;
+    width: 95%;
+    max-width: 300px;
+}
+
+#concept-view {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    order: 1;
+    align-self: flex-start;
+}
+
+#current-concept-title {
+    background-color: lightblue;
+}
+
+#post-row {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+#add-post-div {
+    order: 2;
+    margin-right: 2em;
+}
+
+#post-box   {
+    order: 1;
+    margin-right: 10em;
+}
+
+#footer {
+    background-color: lightblue;
+    padding: .5em;
+
+}
+
+.page {
+    position: relative;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: .25em;
+}
+
+.row {
+    position: relative;
+    max-width: 100%;
+    margin-top: .25em;
+    margin-bottom: .25em;
+}
+
+.concept-block:hover {
+    cursor: crosshair;
+    background-color: lightgrey;
+}
+
+
+.concept-block {
+    min-width: 48px;
+    margin: .25em;
+    padding: .25em;
+    border-style: ridge;
+
+}
+
+body {
+    font-size: 80%;
+    background-color: lightgrey;
+}
+h1, h3, h4, h5 {
+    margin: 0;
+}
+
+
+@media screen and (min-width: 550px) {
+    #content-view {
+        flex-direction: row;
+    }
+    #concept-view {
+        order: 3;
+        margin-left: 1em;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .page {
+        max-width: 1650px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2em;
+    }
+    body {
+        font-size: 110%;
+    }
+    #lesson-select{
+        margin-left: 2em;
+    }
+
+    #post-row {
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+    }
+
+    #concept-list {
+        min-width: 200px;
+    }
+}
+
+
+
