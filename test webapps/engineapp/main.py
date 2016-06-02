@@ -25,7 +25,7 @@ form = """
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.out.write("wtf is going ons")
+        self.response.out.write("what is going ons")
 
 class TestHandler(webbapp2.RequestHandler):
 	def get(self):
